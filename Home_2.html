@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home_2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body { background: black; color: #333; }
+
+    /* ===== HEADER ===== */
+    .header {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+      z-index: 10;
+    }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: black;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav {
+      background: rgba(255,255,255,0.1);
+      padding: 8px 20px;
+      border-radius: 25px;
+      display: flex;
+      gap: 20px;
+      font-size: 0.9rem;
+    }
+    .nav a {
+      color: white;
+      text-decoration: none;
+    }
+    .nav a:hover { color: maroon; }
+
+    .menu-toggle {
+      width: 40px;
+      height: 40px;
+      background: maroon;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+     background: url('khyber.fb2.png') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 160px 20px 100px;
+    }
+    .hero-content {
+      max-width: 900px;
+      margin: auto;
+    }
+    .hero .reviews {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .hero p {
+      font-size: 1rem;
+      color: #ddd;
+      margin-bottom: 30px;
+    }
+    .hero .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: maroon;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 25px;
+      transition: background .3s;
+      text-decoration: none;
+    }
+    .hero .btn:hover {
+      background: #fff;
+      color: #4b4a47;
+    }
+
+    /* ===== PARTNERS ===== */
+    .partners {
+      background: #fff;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      padding: 20px 0;
+    }
+    .partners-container {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+/* ===== BEST CARS ===== */
+.best-cars {
+  background: black;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.best-cars h2 {
+  color: #c71c1c; /* Red Accent */
+  font-size: 1rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.best-cars h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: white;
+}
+
+/* ===== CAR CARDS ===== */
+.car-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.car-card {
+  background: #fff;
+  width: 240px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    /* ===== ABOUT SECTIONS ===== */
+    .about-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 80px auto;
+      padding: 0 20px;
+      flex-wrap: wrap;
+      background-color: white;
+    }
+    .about-text {
+      flex: 1;
+    }
+    .about-text h4 {
+      color: maroon;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .about-text h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .about-text p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .about-text .btn {
+      padding: 10px 20px;
+      background: maroon;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .btn:hover.about-text {
+     transform: translateY(-6px);
+      background: #222;
+    }
+    .about-image {
+      flex: 1;
+      height: 250px;
+      background: #ccc;
+      border-radius: 8px;
+    }
+
+    /* ===== OFFER SECTION ===== */
+.offer-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: maroon;
+  color: #fff;
+  padding: 60px 80px;
+  gap: 40px;
+}
+.offer-left { flex: 1; }
+.offer-left h5 {
+  color: maroon;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+.offer-left h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.offer-left p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #ccc;
+}
+.offer-link {
+  color: maroon;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.offer-left .btn {
+  background: maroon;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.offer-left .btn:hover {
+  background: #fff;
+  color: #1d1c1b;
+}
+.offer-right {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: maroon;
+  height: 250px;
+  border-radius: 6px;
+}
+.discount-circle {
+  position: absolute;
+  right: -40px;
+  background: maroon;
+  color: #fff;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+/* ===== PRICING SECTION ===== */
+.pricing-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: #fdfaf6;
+}
+.pricing-section h5 {
+  color: maroon;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+.pricing-section h2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+.pricing-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: auto;
+}
+.pricing-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 30px 20px;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform .3s;
+}
+.pricing-card:hover {
+  transform: translateY(-5px);
+}
+.pricing-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+.pricing-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+.pricing-card .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: maroon;
+  margin-bottom: 20px;
+}
+.pricing-card .btn {
+  background: maroon;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+}
+.pricing-card .btn:hover {
+  background: #1d1c1b;
+}
+
+.best-offer{
+      background:rgb(56, 10, 10);
+      padding:4rem 1rem;
+    }
+    .best-offer .container{
+      max-width:1200px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:300px 1fr;
+      gap:3rem;
+    }
+
+    /* Left side card */
+    .offer-card{
+      background:#fff;
+      border:1px solid #e0dcd6;
+      border-radius:6px;
+      padding:2rem;
+    }
+    .offer-card h4{
+      font-family:'Playfair Display',serif;
+      font-size:1.1rem;
+      font-weight:600;
+      color:rgb(116, 3, 3);
+      margin-bottom:1.2rem;
+      border-bottom:1px solid #e0dcd6;
+      padding-bottom:.5rem;
+    }
+    .offer-card ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+    }
+    .offer-card li{
+      padding:.8rem 0;
+      border-bottom:1px solid #eee;
+      font-size:.95rem;
+      cursor:pointer;
+    }
+    .offer-card li:last-child{border-bottom:none;}
+
+    /* Right content */
+    .offer-right h2{
+      font-family:'Playfair Display',serif;
+      font-size:2rem;
+      letter-spacing:1px;
+      margin-bottom: 60px;
+      background-color: white;
+    }
+    .offer-right .lead{
+      font-size:1rem;
+      line-height:1.6;
+      margin-bottom:1rem;
+      color:#333;
+      background-color: white;
+    }
+    .offer-right p{
+      font-size:.95rem;
+      line-height:1.6;
+      margin-bottom:2rem;
+      background-color:white ;
+      padding: 0%;
+      margin-top: 10px;
+    }
+    .offer-right{
+        background-color: white;
+    }
+    .offer-right span{
+        font-weight: bold;
+    }
+        
+    body {
+      margin: 0;
+      font-family: "Georgia", serif;
+      background-color: #fdfaf6;
+      color: #2c2c2c;
+    }
+
+    .section {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    /* ---------------- Chef Section ---------------- */
+    .chef-section h5 {
+      color: maroon;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+    .chef-section h2 {
+      font-size: 2rem;
+      font-weight: 500;
+      margin-bottom: 40px;
+    }
+    .chef-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .chef-card {
+      width: 200px;
+      height: 260px;
+      background: #ddd;
+      border: 12px solid rgb(57, 23, 23);
+    }
+
+    /* ---------------- Testimonial Section ---------------- */
+    .testimonial-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 80px 20px;
+    }
+    .testimonial-content {
+      flex: 1;
+      text-align: left;
+      max-width: 550px;
+    }
+    .testimonial-content h5 {
+      color: maroon;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+    .testimonial-content h2 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+    }
+    .testimonial-content .quote-icon {
+      font-size: 40px;
+      color: maroon;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .testimonial-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      color: #555;
+    }
+    .testimonial-author h4 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    .testimonial-author span {
+      font-size: 0.9rem;
+      color: #777;
+    }
+    .testimonial-line {
+      width: 120px;
+      height: 2px;
+      background: #ccc;
+      margin: 15px 0;
+    }
+    .testimonial-dots {
+      display: flex;
+      gap: 8px;
+      margin-top: 15px;
+    }
+    .testimonial-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      background: #ccc;
+      cursor: pointer;
+    }
+    .testimonial-dots span.active {
+      background: maroon;
+    }
+
+    .testimonial-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .testimonial-image .circle {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: #ddd;
+      border: 12px solid rgb(57, 23, 23);
+    }
+
+    body {
+      margin: 0;
+      font-family: "Georgia", serif;
+      background: #fdfaf6;
+    }
+
+    .book-table {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      margin: 60px auto;
+      max-width: 1350px;
+      background: #fff;
+    }
+
+    .book-left {
+      flex: 1;
+      background: rgb(67, 4, 4);
+      min-height: 400px;
+    }
+
+    .book-right {
+      flex: 1;
+      padding: 50px;
+      background: #fff;
+    }
+
+    .book-right h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .form-group {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group select,
+    textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: none;
+      outline: none;
+      background: #fdf9f5;
+      border-radius: 25px;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    textarea {
+      border-radius: 12px;
+      resize: none;
+      min-height: 100px;
+    }
+
+    .form-group.full {
+      flex-direction: column;
+    }
+
+    .btn-submit {
+      background: maroon;
+      color: #fff;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-top: 20px;
+      display: inline-block;
+      transition: 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      background: rgb(57, 23, 23);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Arial", sans-serif;
+      background: #f9f6f2;
+    }
+
+    .download-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 80px 100px;
+      gap: 50px;
+    }
+
+    .download-text h5 {
+      color: maroon;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    .download-text h2 {
+      font-size: 32px;
+      line-height: 1.4;
+      margin: 0 0 20px;
+      color: #222;
+      text-transform: uppercase;
+    }
+
+    .download-text p {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .app-buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .app-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #f4f0e8;
+      border-radius: 6px;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #000;
+      font-size: 13px;
+      transition: 0.3s;
+    }
+
+    .app-btn:hover {
+      background: #e6dfd2;
+    }
+
+    .download-image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bg-rectangle {
+      width: 220px;
+      height: 400px;
+      background: #d6d6d6;
+      border-radius: 10px;
+    }
+
+    .phone-mockup {
+      width: 180px;
+      height: 360px;
+      background: #ccc;
+      border-radius: 25px;
+      position: absolute;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+   
+    /* Responsive tweaks */
+    @media(max-width:900px){
+      .best-offer .container{
+        grid-template-columns:1fr;
+      }
+      .offer-left{
+        margin-bottom:2rem;
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: "Arial", sans-serif;
+      background: #f9f6f2;
+    }
+
+    .blog-section {
+      padding: 60px 80px;
+    }
+
+    .blog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .blog-header h5 {
+      font-size: 14px;
+      color: maroon;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .blog-header h2 {
+      font-size: 36px;
+      margin: 0;
+      color: #222;
+      text-transform: uppercase;
+    }
+
+    .view-more {
+      background: maroon;
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .view-more:hover {
+      background: rgb(57, 23, 23);
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .blog-card {
+      background: rgb(106, 5, 5);
+      border-radius: 6px;
+      padding-bottom: 20px;
+    }
+
+    .blog-img {
+      background: gray;
+      height: 180px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .blog-meta {
+      display: flex;
+      gap: 15px;
+      font-size: 12px;
+      color:white;
+      margin-bottom: 10px;
+    }
+
+    .blog-card h3 {
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0 0 15px;
+      color: white;
+    }
+
+    .read-more {
+      display: inline-block;
+      padding: 8px 18px;
+      border: 1px solid #222;
+      border-radius: 25px;
+      font-size: 13px;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+      background: rgb(129, 19, 19);
+    }
+
+    .read-more:hover {
+      background: #222;
+      color: #fff;
+    }
+
+    .footer {
+      background: #1c1c1c;
+      color: #ddd;
+      padding: 60px 80px 30px;
+      font-family: "Arial", sans-serif;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-about h2.logo {
+      color: maroon;
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .footer-about p {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .footer-links h3,
+    .footer-gallery h3,
+    .footer-newsletter h3 {
+      margin-bottom: 15px;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: maroon;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .gallery-grid div {
+      background: #d6d6d6;
+      height: 60px;
+      border-radius: 4px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      margin: 15px 0;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 25px 0 0 25px;
+      outline: none;
+    }
+
+    .newsletter-form button {
+      background: maroon;
+      border: none;
+      padding: 0 20px;
+      border-radius: 0 25px 25px 0;
+      cursor: pointer;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      width: 32px;
+      height: 32px;
+      background: maroon;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+
+    .footer-bottom-links a {
+      margin-left: 20px;
+      color: #ddd;
+      text-decoration: none;
+    }
+
+    .footer-bottom-links a:hover {
+      color: maroon;
+    }
+
+    /* Change all section backgrounds to black */
+body,
+.about-section,
+.offer-section,
+.pricing-section,
+.testimonials,
+.blog,
+.footer {
+  background-color: #000 !important;
+}
+
+/* Optional: keep text readable */
+.about-section,
+.offer-section,
+.pricing-section,
+.testimonials,
+.blog,
+.footer {
+  color: #fff;
+}
+
+
+  </style>
+</head>
+<body>
+    <!-- ===== HERO SECTION ===== -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="reviews">● ● ● ● ● <span>120+ Clients Reviews</span></div>
+      <h1>IGNITE YOUR PASSION<br>DRIVE EXCELLENCE</h1>
+      <p>A car showroom is a dynamic hub of automotive excellence, offering a diverse range of vehicles that excite passion with a fusion of performance and style..</p>
+      <a href="Shop.html" class="btn">Visit Shop →</a>
+    </div>
+  </section>
+
+  <!-- ===== PARTNERS ===== -->
+  <section class="partners">
+    <div class="partners-container">
+  <span>🚗 DRIVE DYNAMICS</span>
+  <span>🧰 AUTO EXPERTS</span>
+  <span>🏎️ PERFORMANCE PARTNERS</span>
+</div>
+
+  </section>
+
+
+<!-- ===== FEATURED CARS ===== -->
+<section class="best-cars">
+  <h2>Best Cars</h2>
+  <h1>Popular Car Models in Our Collection</h1>
+
+  <div class="car-cards">
+    <!-- Bugatti -->
+    <div class="car-card">
+      <img src="bugati.jpeg" alt="Bugatti Chiron">
+      <h3>SpeedLine GT (Bugatti Chiron)</h3>
+      <p>$35,000</p>
+    </div>
+
+    <!-- BMW -->
+    <div class="car-card">
+      <img src="bugati.jpeg" alt="BMW M3">
+      <h3>Falcon X Sport (BMW M3)</h3>
+      <p>$42,000</p>
+    </div>
+
+    <!-- Rolls-Royce -->
+    <div class="car-card">
+      <img src="bugati.jpeg" alt="Rolls Royce Cullinan">
+      <h3>ThunderRide SUV (Rolls-Royce Cullinan)</h3>
+      <p>$50,000</p>
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+
+
+  <!-- ===== ABOUT SECTION 1 ===== -->
+  <!-- ===== ABOUT SECTION 1 ===== -->
+<section class="about-section">
+  <div class="about-text">
+    <h4>About Us</h4>
+    <h2>Driven by Innovation and Performance</h2>
+    <p>Our dealership is a trusted hub for automotive excellence, offering a wide range of vehicles that combine technology, power, and style for every kind of driver.</p>
+    <a href="#" class="btn">Explore Our Cars →</a>
+  </div>
+  <div class="about-image" style="background:url('car-about1.jpg') center/cover no-repeat;"></div>
+</section>
+
+<!-- ===== ABOUT SECTION 2 ===== -->
+<section class="about-section">
+  <div class="about-image" style="background:url('car-about2.jpg') center/cover no-repeat;"></div>
+  <div class="about-text">
+    <h4>Precision and Passion</h4>
+    <h2>Every Ride Designed for Excellence</h2>
+    <p>From luxurious comfort to unmatched performance, our cars are crafted to deliver a driving experience that exceeds expectations every time you hit the road.</p>
+  </div>
+</section>
+
+<!-- ===== OFFER SECTION ===== -->
+<section class="offer-section">
+  <div class="offer-left">
+    <h5>Get 15% Off</h5>
+    <h2>Today's Best Car Deals</h2>
+    <p>Experience unbeatable discounts on top models and enjoy the thrill of driving innovation. Find your perfect car at the best price — only for a limited time.</p>
+    <a href="#" class="offer-link">Limited Time Offer</a>
+    <br><br>
+    <a href="#" class="btn">Book Test Drive →</a>
+  </div>
+  <div class="offer-right">
+    <div class="discount-circle">
+      15% OFF <br> NOW
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== PRICING PLAN SECTION ===== -->
+<section class="pricing-section">
+  <h5>Pricing Plan</h5>
+  <h2>Where Driving Dreams <br> Come True</h2>
+
+  <div class="pricing-cards">
+    <div class="pricing-card">
+      <h3>Basic Maintenance</h3>
+      <p>Essential car checkup including oil change and tire rotation.</p>
+      <div class="price">$99.00</div>
+      <a href="Contact.html" class="btn">Book Now</a>
+    </div>
+
+    <div class="pricing-card">
+      <h3>Performance Upgrade</h3>
+      <p>Enhance your car’s power and handling with premium tuning.</p>
+      <div class="price">$250.00</div>
+      <a href="Contact.html" class="btn">Book Now</a>
+    </div>
+
+    <div class="pricing-card">
+      <h3>Luxury Detailing</h3>
+      <p>Full interior and exterior detailing for a showroom shine.</p>
+      <div class="price">$180.00</div>
+      <a href="Contact.html" class="btn">Book Now</a>
+    </div>
+  </div>
+</section>
+
+<section class="best-offer">
+  <div class="container">
+    
+    <!-- Left Side (Categories / Models) -->
+    <div class="offer-card">
+      <h4>Car Categories</h4>
+      <ul>
+        <li>Luxury Sedans</li>
+        <li>Sports Cars</li>
+        <li>SUVs & Crossovers</li>
+        <li>Electric Vehicles</li>
+        <li>Convertible Models</li>
+        <li>Hybrid Cars</li>
+      </ul>
+    </div>
+
+    <!-- Right Side (Main Offer) -->
+    <div class="offer-right">
+      <h2>Find Your Dream Car Today</h2>
+      <p class="lead">
+        Discover premium cars that combine performance, comfort, and innovation.
+        Whether you’re looking for a sleek sedan, a family SUV, or a powerful sports car — we have the perfect match for you.
+      </p>
+      <p>
+        <span>Exclusive Offers:</span> Get up to <strong>15% off</strong> on select 2025 models.  
+        Enjoy <strong>0% financing</strong> for up to 12 months with instant approval.
+      </p>
+      <p>
+        Visit our showroom today and experience the thrill of driving excellence.
+        Limited stock available — don't miss out!
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+  <section class="section chef-section">
+  <h5>Our Experts</h5>
+<h2>Driving Satisfaction with Guaranteed Performance</h2>
+
+    <div class="chef-grid">
+      <div class="chef-card"></div>
+      <div class="chef-card"></div>
+      <div class="chef-card"></div>
+      <div class="chef-card"></div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="testimonial-section">
+    <div class="testimonial-content">
+     <h5>Testimonial</h5>
+<h2>What Our Customers Say</h2>
+<span class="quote-icon">“</span>
+<p>
+  A car dealership is a dynamic hub of automotive excellence, offering a diverse range 
+  of vehicles that excite drivers with power, style, and performance. From compact cars 
+  to luxury models — every drive feels extraordinary.
+</p>
+<div class="testimonial-author">
+  <h4>James Parker</h4>
+  <span>Automobile Engineer</span>
+</div>
+
+      <div class="testimonial-line"></div>
+      <div class="testimonial-dots">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="testimonial-image">
+      <div class="circle"></div>
+    </div>
+  </section>
+
+  <section class="book-table">
+    <!-- Left side image/placeholder -->
+    <div class="book-left"></div>
+
+    <!-- Right side form -->
+    <div class="book-right">
+      <h2>BOOK AN APPOINTMENT</h2>
+      <form>
+        <div class="form-group">
+          <select>
+            <option>Date</option>
+          </select>
+          <select>
+            <option>Time</option>
+          </select>
+        </div>
+
+        <div class="form-group full">
+          <select>
+            <option>car</option>
+          </select>
+        </div>
+
+        <div class="form-group full">
+          <textarea placeholder="Message here.."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Book Appointment→</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="download-section">
+  <div class="download-text">
+    <h5>Download The App</h5>
+    <h2>Download The Food App Now</h2>
+    <p>
+     A car showroom is a dynamic hub of automotive excellence, offering a diverse range of vehicles that excite passion with a fusion of performance and style.
+    </p>
+    <div class="app-buttons">
+      <a href="#" class="app-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" width="20">
+        <span>Download On The <br><strong>App Store</strong></span>
+      </a>
+      <a href="#" class="app-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg" alt="Google Play" width="20">
+        <span>Get It On <br><strong>Google Play</strong></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="download-image">
+    <div class="bg-rectangle"></div>
+    <div class="phone-mockup"></div>
+  </div>
+</section>
+
+<section class="blog-section">
+  <div class="blog-header">
+    <div>
+      <h5>Latest Blog and News</h5>
+      <h2>Our Best Recent Blog and News</h2>
+    </div>
+    <a href="Blog.html" class="view-more">View More →</a>
+  </div>
+
+  <div class="blog-grid">
+    <!-- Blog Card 1 -->
+    <div class="blog-card">
+      <div class="blog-img"> </div>
+      <div class="blog-meta">
+        <span>👤 By Admin</span>
+        <span>📅 October 29, 2024</span>
+      </div>
+      <h3>Powerful Creations on Every Road Where Driving Dreams Come True</h3>
+
+      <a href="Blog.html" class="read-more">Read More →</a>
+    </div>
+
+    <!-- Blog Card 2 -->
+    <div class="blog-card">
+      <div class="blog-img"></div>
+      <div class="blog-meta">
+        <span>👤 By Admin</span>
+        <span>📅 October 29, 2024</span>
+      </div>
+ <h3>Engineering Excellence on Every Road Where Performance Meets Passion</h3>
+
+      <a href="Blog.html" class="read-more">Read More →</a>
+    </div>
+
+    <!-- Blog Card 3 -->
+    <div class="blog-card">
+      <div class="blog-img"></div>
+      <div class="blog-meta">
+        <span>👤 By Admin</span>
+        <span>📅 October 29, 2024</span>
+      </div>
+  <h3>Precision and Power on Every Road Where Driving Dreams Come Alive</h3>
+      <a href="Blog.html" class="read-more">Read More →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <!-- Column 1 -->
+    <div class="footer-about">
+      <h2 class="logo">AUTO-CAR</h2>
+      <p>
+        A car showroom is a vibrant hub of automotive excellence, offering an unforgettable experience for car enthusiasts.
+      </p>
+      <p>📍 Address <br> Rawalpindi,Pakistan</p>
+      <p>✉️ Email <br> AUTO-CAR@gmail.com</p>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="footer-links">
+      <h3>Page</h3>
+      <ul>
+        <li><a href="About_Us.html">About Us</a></li>
+        <li><a href="Shop.html">Service</a></li>
+        <li><a href="Gallery.html">Gallery</a></li>
+        <li><a href="#">Testimonial</a></li>
+        <li><a href="Blog.html">Blog And News</a></li>
+        <li><a href="#">Team</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="footer-gallery">
+      <h3>Gallery</h3>
+      <div class="gallery-grid">
+        <div></div><div></div><div></div>
+        <div></div><div></div><div></div>
+        <div></div><div></div><div></div>
+      </div>
+    </div>
+
+    <!-- Column 4 -->
+    <div class="footer-newsletter">
+      <h3>Newsletter</h3>
+      <p>A car showroom is a vibrant hub of automotive excellence, offering an unforgettable experience for car enthusiasts.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Your Email...">
+        <button type="submit">➜</button>
+      </form>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© baderkhalid 2024 | All Rights Reserved</p>
+    <div class="footer-bottom-links">
+      <a href="#">Terms & Condition</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Contact Us</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

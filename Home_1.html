@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AUTO-CAR</title>
+  <link rel="stylesheet" href="styless.css" />
+ <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+</head>
+<body>
+  
+  <!-- ===== TOP INFO BAR ===== -->
+  <div class="topbar">
+    <div class="topbar-left">
+       <span>📧 bader103@gmail.com</span>
+      <span>📍 Rawalpindi,Pakistan</span>
+      <span>🕒 Mon-Fri 9am - 8pm</span>
+    </div>
+
+    <div class="topbar-right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+
+   
+
+  <!-- ===== MAIN HEADER ===== -->
+  <header class="header">
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="Home_1.html">
+        <img src="logo.pngg" alt="Nafuant Logo" />
+      </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <ul>
+        <li><a href="Home_1.html">Home_1</a></li>
+      
+        <li><a href="About_Us.html">About_Us</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="Gallery.html">Gallery</a></li>
+        <li><a href="Shop.html">Shop</a></li>
+        <a href="Product_Single.html">Product_Single</a>
+     
+      </ul>
+    </nav>                                                    
+
+    <!-- Contact Button -->
+    <a href="Home_2.html" class="contact-btn">Home 2 →</a>
+
+    <!-- Mobile Toggle -->
+    <div class="menu-toggle" id="menu-btn">☰</div>
+  </div>
+</header>
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Experience the Power of Perfection</h1>
+      <p>Explore our luxury cars & professional automotive services — all in one place.</p>
+      <a href="Gallery.html" class="btn">Explore Cars</a>
+      
+    </div>
+  </section>
+
+  <!-- ===== OUR COLLECTION ===== -->
+  <section class="cars">
+    <h2>Our Collection</h2>
+    <h3>Top Luxury Cars</h3>
+
+    <div class="car-grid">
+      <div class="car-card">
+        <img src="bugati.jpeg" alt="Bugatti Chiron">
+        <h4>Bugatti Chiron</h4>
+        <p>Unmatched performance and ultimate speed.</p>
+        <span>$3,000,000</span>
+      </div>
+
+      <div class="car-card">
+        <img src="ferrari.jpeg" alt="Ferrari SF90">
+        <h4>Ferrari SF90 Stradale</h4>
+        <p>Hybrid power with Italian design.</p>
+        <span>$625,000</span>
+      </div>
+
+      <div class="car-card">
+        <img src="lamborgini.jpg" alt="Lamborghini Aventador">
+        <h4>Lamborghini Aventador</h4>
+        <p>V12 beast that defines aggression.</p>
+        <span>$550,000</span>
+      </div>
+
+      <div class="car-card">
+        <img src="rolls.png" alt="Rolls-Royce Phantom">
+        <h4>Rolls-Royce Phantom</h4>
+        <p>Luxury and elegance redefined.</p>
+        <span>$460,000</span>
+      </div>
+
+      <div class="car-card">
+        <img src="mercedes.jpeg" alt="Mercedes AMG GT">
+        <h4>Mercedes AMG GT</h4>
+        <p>German precision with thrilling performance.</p>
+        <span>$200,000</span>
+      </div>
+
+      <div class="car-card">
+        <img src="bmw.jpg" alt="BMW M8">
+        <h4>BMW M8 Competition</h4>
+        <p>Powerful, elegant, and aggressive.</p>
+        <span>$180,000</span>
+      </div>
+
+      <div class="car-card">
+        <img src="rolls.png" alt="Rolls-Royce Phantom">
+        <h4>Rolls-Royce Phantom</h4>
+        <p>Luxury and elegance redefined.</p>
+        <span>$460,000</span>
+      </div>
+
+       <div class="car-card">
+        <img src="mercedes.jpeg" alt="Mercedes AMG GT">
+        <h4>Mercedes AMG GT</h4>
+        <p>German precision with thrilling performance.</p>
+        <span>$200,000</span>
+      </div>
+
+         <div class="car-card">
+        <img src="ferrari.jpeg" alt="Ferrari SF90">
+        <h4>Ferrari SF90 Stradale</h4>
+        <p>Hybrid power with Italian design.</p>
+        <span>$625,000</span>
+      </div>
+
+      <div class="car-card">
+        <img src="lamborgini.jpg" alt="Lamborghini Aventador">
+        <h4>Lamborghini Aventador</h4>
+        <p>V12 beast that defines aggression.</p>
+        <span>$550,000</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="special-offer">
+  <div class="offer-container">
+    <!-- Left Side (Offer Banner) -->
+    <div class="offer-banner">
+      <img src="saleoffer.png" alt="Special Offer Sale">
+    </div>
+
+    <!-- Right Side (Countdown + Button) -->
+    <div class="offer-details">
+      <h4>SPECIAL OFFER</h4>
+      <h2>GET 30% DISCOUNT</h2>
+
+      <div class="countdown">
+        <div><span id="days">5</span><small>Days</small></div>
+        <div><span id="hours">21</span><small>Hours</small></div>
+        <div><span id="minutes">33</span><small>Mins</small></div>
+        <div><span id="seconds">5</span><small>Sec</small></div>
+      </div>
+
+      <a href="#" class="btn-order">Order Now →</a>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <h2>ASK SOME QUESTION</h2>
+<div class="faq-container">
+  <!-- Left Column -->
+  <div class="faq-column">
+    <div class="faq-item active">
+      <div class="faq-question">
+        <span>01.</span> How can I book a service appointment?
+        <i class="toggle">–</i>
+      </div>
+      <div class="faq-answer">
+        You can easily book an appointment online through our website or call our customer service team. 
+        We’ll confirm your preferred date and time right away.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>02.</span> What types of cars do you service?
+        <i class="toggle">+</i>
+      </div>
+      <div class="faq-answer">
+        We service all major brands, including Toyota, Honda, Suzuki, Kia, and Hyundai — from compact cars to SUVs.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>03.</span> What are your garage operating hours?
+        <i class="toggle">+</i>
+      </div>
+      <div class="faq-answer">
+        Our garage is open from <strong>9:00 AM to 9:00 PM</strong>, Monday through Sunday.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>04.</span> Do you provide emergency roadside assistance?
+        <i class="toggle">+</i>
+      </div>
+      <div class="faq-answer">
+        Yes, we provide 24/7 roadside assistance for breakdowns, towing, and on-spot repairs within the city limits.
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Column -->
+  <div class="faq-column">
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>05.</span> Do you offer car detailing and washing?
+        <i class="toggle">+</i>
+      </div>
+      <div class="faq-answer">
+        Absolutely! We offer complete detailing packages — including washing, polishing, waxing, and interior cleaning.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>06.</span> Can I customize my car at your garage?
+        <i class="toggle">+</i>
+      </div>
+      <div class="faq-answer">
+        Yes, we provide body kits, alloy wheels, custom paint jobs, and interior upgrades for select models.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>07.</span> Do you sell spare parts and accessories?
+        <i class="toggle">+</i>
+      </div>
+      <div class="faq-answer">
+        We stock genuine and high-quality aftermarket parts for all popular makes and models.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>08.</span> Do you offer pickup and drop-off service?
+        <i class="toggle">+</i>
+      </div>
+      <div class="faq-answer">
+        Yes, for your convenience, we offer pickup and drop-off services within a 10 km radius of our workshop.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>09.</span> How can I contact you for quick support?
+        <i class="toggle">+</i>
+      </div>
+      <div class="faq-answer">
+        You can reach us via our <a href="Contact.html">Contact Page</a>, or call our 24-hour helpline at <strong>+92 300 1234567</strong>.
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+<section class="mechanic-section">
+  <div class="mechanic-heading">
+    <span class="sub">OUR MECHANICS</span>
+    <h2>EXPERT CARE FOR<br>EVERY VEHICLE</h2>
+  </div>
+
+  <div class="mechanic-grid">
+    <!-- Mechanic Card 1 -->
+    <div class="mechanic-card">
+      <div class="mechanic-img">
+        <img src="es.jpg" alt="John Carter">
+        <div class="social-bar">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <button class="share-btn"><i class="fas fa-share-alt"></i></button>
+      </div>
+      <h3>Haji Bader</h3>
+      <p>Lead Mechanic</p>
+    </div>
+
+    <!-- Mechanic Card 2 -->
+    <div class="mechanic-card">
+      <div class="mechanic-img">
+        <img src="bader2.jpg" alt="David Miller">
+        <div class="social-bar">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <button class="share-btn"><i class="fas fa-share-alt"></i></button>
+      </div>
+      <h3>Qureshi Ustad</h3>
+      <p>Auto Technician</p>
+    </div>
+
+    <!-- Mechanic Card 3 -->
+    <div class="mechanic-card">
+      <div class="mechanic-img">
+        <img src="bader3.jpg" alt="Robert Wilson">
+        <div class="social-bar">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <button class="share-btn"><i class="fas fa-share-alt"></i></button>
+      </div>
+      <h3>Robert Qureshi</h3>
+      <p>Engine Specialist</p>
+    </div>
+  </div>
+</section>
+
+<!-- Font Awesome CDN for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<section class="book-section">
+  <div class="book-left">
+    <div class="circle">
+      Since 1988<br>Best<br>Working
+    </div>
+  </div>
+
+  <div class="book-card">
+    <h2>Book An Appointment</h2>
+    <form>
+      <select required>
+        <option>Date</option>
+        <option>May 1</option>
+        <option>May 2</option>
+      </select>
+      <select required>
+        <option>Time</option>
+        <option>6:00 PM</option>
+        <option>7:00 PM</option>
+      </select>
+      <select required>
+        <option>Car</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3+</option>
+      </select>
+      <textarea placeholder="Message here.."></textarea>
+      <button type="submit">Book Appointment →</button>
+    </form>
+  </div>
+</section>
+
+<div class="partners">
+<div>🏎️ SPEED MOTORS</div>
+<div>🚗 AUTO DRIVE DEALERS</div>
+<div>🔧 PERFORMANCE PARTNERS</div>
+
+</div>
+
+<section class="blog-section">
+  <div class="blog-heading">
+    <div class="head-left">
+      <span class="sub">LATEST BLOG AND NEWS</span>
+      <h2>OUR BEST RECENT BLOG<br>AND NEWS</h2>
+    </div>
+    <a href="Blog1.html" class="view-more">View More →</a>
+  </div>
+
+  <div class="blog-grid">
+    <!-- Blog Card 1 -->
+    <div class="blog-card">
+      <div class="blog-img">
+        <img src="blog1.png" alt="Car Blog">
+      </div>
+      <div class="blog-content">
+        <div class="meta">
+          <span><i class="fas fa-user"></i> By Admin</span>
+          <span><i class="fas fa-calendar-alt"></i> October 29, 2024</span>
+        </div>
+        <h3>Where Driving Dreams Come True</h3>
+        <p>Symbolizes ambition, passion, and modern car culture..</p>
+        <a href="Blog.html" class="read-more">View More</a>
+      </div>
+    </div>
+
+    <!-- Blog Card 2 -->
+    <div class="blog-card">
+      <div class="blog-img">
+        <img src="blog2.png" alt="Car Blog">
+      </div>
+      <div class="blog-content">
+        <div class="meta">
+          <span><i class="fas fa-user"></i> By Admin</span>
+          <span><i class="fas fa-calendar-alt"></i> October 29, 2024</span>
+        </div>
+        <h3>Performance Meets Perfection</h3>
+        <p>Reflects speed, engineering precision, and power..</p>
+        <a href="Blog.html" class="read-more">View More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services">
+    <h2>Our Services</h2>
+    <div class="service-boxes">
+      <div class="box">
+        <h4>Car Sales</h4>
+        <p>Buy new and pre-owned cars with trusted dealers.</p>
+      </div>
+      <div class="box">
+        <h4>Maintenance</h4>
+        <p>Expert care and repair for your vehicle’s best health.</p>
+      </div>
+      <div class="box">
+        <h4>Detailing</h4>
+        <p>Bring back that showroom shine with our detailing experts.</p>
+      </div>
+      <div class="box">
+        <h4>Insurance & Finance</h4>
+        <p>Easy financing and insurance assistance available.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT CTA ===== -->
+  <section class="contact-cta">
+    <h2>Looking for Your Dream Car?</h2>
+    <p>Get in touch with our experts and book a test drive today.</p>
+    <a href="Contact.html" class="btn">Contact Us</a>
+  </section>
+
+  
+<!-- ===== TESTIMONIAL SECTION ===== -->
+ <div class="testimonial-wrapper">
+  <!-- Navigation buttons OUTSIDE the card -->
+  <button class="nav-btn prev">←</button>
+
+<section class="testimonial">
+  <div class="testimonial-box">
+    <h5>TESTIMONIAL</h5>
+    <h1>WHAT OUR CLIENTS SAY</h1>
+
+    <p class="testimonial-text">
+      “ A car showroom is a vibrant hub of automotive excellence, offering a <br>
+        diverse range of vehicles that ignite passion with a fusion of <br>
+        performance, style, and innovation. From compact city cars to <br>
+        luxurious sedans and powerful SUVs, each drive is a thrilling experience.”
+    </p>
+
+    <div class="testimonial-author">
+      <h4>James Carter</h4>
+      <span>Automotive Specialist</span>
+    </div>
+
+    <div class="testimonial-rating">
+      ★★★☆☆
+    </div>
+
+   
+    
+  </div>
+  
+</section>
+
+ <button class="nav-btn next">→</button>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col about">
+        <h3>AutoDrive</h3>
+        <p>Luxury car dealership offering premium cars and maintenance services worldwide.</p>
+      </div>
+
+      <div class="footer-col contact">
+        <h4>Contact</h4>
+        <p><strong>Address:</strong> Rawalpindi, Pakistan</p>
+        <p><strong>Phone:</strong> +92 311 543771</p>
+        <p><strong>Email:</strong> baderkhalid103@gmail.com</p>
+      </div>
+
+      <div class="footer-col page">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="About_Us.html">About Us</a></li>
+          <li><a href="Shop.html">Services</a></li>
+          <li><a href="Gallery.html">Gallery</a></li>
+          <li><a href="Blog.html">Blog</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter">
+        <h4>Newsletter</h4>
+        <p>Subscribe to get the latest offers and updates.</p>
+        <div class="newsletter-box">
+          <input type="email" placeholder="Your Email.." />
+          <button type="submit">➤</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© AutoDrive 2024 | All Rights Reserved</p>
+      <div class="footer-links">
+        <a href="#">Terms & Condition</a>
+        <a href="#">Privacy Policy</a>
+        <a href="Contact.html">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JS FOR TIME AND CARD HOVER ===== -->
+  <script>
+    // Live clock
+    function updateTime() {
+      const now = new Date();
+      const time = now.toLocaleTimeString();
+      document.getElementById("time").innerHTML = `<i class="fa-regular fa-clock"></i> ${time}`;
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+
+    // Card hover animation
+    const cards = document.querySelectorAll('.car-card');
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => card.style.transform = 'translateY(-8px)');
+      card.addEventListener('mouseleave', () => card.style.transform = 'translateY(0)');
+    });
+  </script>
+</body>
+</html>

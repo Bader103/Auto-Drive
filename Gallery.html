@@ -1,0 +1,578 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Nafuant</title>
+   <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+  <style>
+   body {
+      margin: 0;
+      background: black;
+      color: white;
+    }
+
+    /* ===== TOP INFO BAR ===== */
+    .topbar {
+      background: maroon;
+      color: #fff;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 100px;
+      position: sticky;     /* make topbar sticky */
+      top: 0;
+      z-index: 1000;
+    }
+
+    .topbar-left span {
+      margin-right: 25px;
+    }
+
+   .topbar-right a {
+  color: white; /* blue color hat jayega */
+  text-decoration: none;
+  font-size: 18px; /* thoda readable size */
+  margin-right: 12px; /* icons ke beech space */
+  display: inline-block; /* spacing properly apply hogi */
+}
+
+
+    .topbar-right a:hover {
+      color: black;
+    }
+
+    /* ===== HEADER / NAVBAR ===== */
+    .header {
+      background: #000;
+      color: #fff;
+      border-bottom: 2px solid #c00;
+      position: sticky;   /* keeps navbar below topbar */
+      top: 35px;          /* same as topbar height */
+      z-index: 999;
+    }
+
+    .header .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* LOGO */
+    .logo img {
+      height: 50px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* NAVIGATION */
+    .nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: #ff0000;
+    }
+
+    /* CONTACT BUTTON */
+    .gallery-btn {
+      background: #710404;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .gallery-btn:hover {
+      background: #ebebeb;
+    }
+
+    /* MENU TOGGLE (mobile) */
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* RESPONSIVE NAV */
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* ===== HERO SECTION ===== */
+    .about-hero {
+      background: rgb(94, 5, 5);
+      padding: 70px 100px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 1px solid #eee;
+      margin-top: 0;
+    }
+
+    .about-hero h2 {
+      font-size: 40px;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .breadcrumb {
+      font-size: 14px;
+      color: white;
+    }
+
+    .breadcrumb a {
+      text-decoration: none;
+      color: maroon;
+    }
+
+    .breadcrumb a :hover{
+      color: #000;
+    }
+
+
+    
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsive layout */
+  gap: 20px;
+  width: 80%;
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 40px 0;
+}
+
+.gallery-item {
+  position: relative;
+  aspect-ratio: 1 / 1; /* perfect square */
+  overflow: hidden;
+  border-radius: 10px;
+  background: #111; /* dark background behind images */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures full image fills box without stretching */
+  display: block;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+
+
+    .ask-section{
+  background:rgb(63, 60, 60);
+  padding:80px 20px;
+  font-family:'Segoe UI',Arial,sans-serif;
+}
+.ask-title{
+  text-align:center;
+  font-size:32px;
+  letter-spacing:2px;
+  margin-bottom:50px;
+  color:white;
+}
+.ask-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:40px;
+  max-width:1200px;
+  margin:0 auto;
+}
+.ask-item{
+  background:#fff;
+  border-radius:4px;
+  overflow:hidden;
+  margin-bottom:20px;
+  transition:background .3s;
+}
+.ask-item.active{
+  background:rgb(111, 1, 1);   /* golden highlight */
+  color:#fff;
+}
+.ask-header{
+  width:100%;
+  border:0;
+  background:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 22px;
+  cursor:pointer;
+  font-size:16px;
+  text-align:left;
+}
+.ask-header .num{
+  margin-right:10px;
+  font-weight:600;
+  min-width:40px;
+}
+.ask-header .question{flex:1;}
+.ask-header .toggle{
+  font-size:20px;
+  margin-left:15px;
+}
+.answer{
+  display:none;
+  padding:0 22px 20px;
+  font-size:15px;
+  line-height:1.5;
+  color:#444;
+}
+.ask-item.active .answer{display:block;color:#fff;}
+.ask-item.active .toggle{transform:rotate(180deg);}
+
+ .footer {
+      background: #111;
+      color: #ddd;
+      padding: 60px 20px 30px;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .footer-col h3, .footer-col h4 { color: #fff; margin-bottom: 15px; }
+    .footer-col p { font-size: 0.9rem; line-height: 1.6; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { color: #ddd; transition: color .3s; }
+    .footer-col ul li a:hover { color: maroon; }
+    .newsletter-box {
+      display: flex;
+      margin: 15px 0;
+      border: 1px solid #555;
+      border-radius: 30px;
+      overflow: hidden;
+    }
+    .newsletter-box input {
+      flex: 1;
+      padding: 10px 15px;
+      border: none;
+      outline: none;
+      background: #222;
+      color: #fff;
+    }
+    .newsletter-box button {
+      background: maroon;
+      border: none;
+      color: #fff;
+      padding: 0 20px;
+      cursor: pointer;
+    }
+    .social-icons a {
+      display: inline-block;
+      margin-right: 10px;
+      color: maroon;
+      font-size: 18px;
+    }
+    .footer-bottom {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .footer-bottom p { font-size: 0.9rem; }
+    .footer-links a {
+      margin-left: 15px;
+      color: #ddd;
+      font-size: 0.9rem;
+    }
+    .footer-links a:hover { color: maroon; }
+
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+ </style>
+</head>
+<body>
+
+  <!-- TOP INFO BAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <span>📧 bader103@gmail.com</span>
+      <span>📍 Rawalpindi,Pakistan</span>
+      <span>🕒 Mon-Fri 9am - 8pm</span>
+    </div>
+     <div class="topbar-right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="header">
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="Home_1.html">
+        <img src="logo.pngg" alt="Nafuant Logo" />
+      </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="Home_1.html">Home</a>
+      <a href="About_Us.html">About Us</a>
+      <a href="Blog.html">Blog</a>
+      <a href="FAQ.html">FAQ</a>
+      <a href="Gallery.html">Gallery</a>
+      <a href="Shop.html">Shop</a>
+      <a href="Product_Single.html">Product Single</a>
+      <a href="Contact.html">Contact</a>
+
+    </nav>
+
+    <!-- Contact Button -->
+    <a href="Gallery_Details.html" class="gallery-btn">Details </a>
+
+    <!-- Mobile Toggle -->
+    <div class="menu-toggle" id="menu-btn">☰</div>
+  </div>
+</header>
+
+  <!-- HERO / TITLE -->
+  <section class="about-hero">
+    <h2>Gallery</h2>
+    <p class="breadcrumb"><a href="Home_1.html">Home</a> > Gallery</p>
+  </section>
+
+  
+  <div class="gallery">
+    <div class="gallery-item"> 
+      <img src="ahmed fb2,2.png"/>
+    </div>
+    <div class="gallery-item">
+      <img src="ahmedes x me.png"/>
+    </div>
+    <div class="gallery-item">
+      <img src="lowriders isb.png"/>
+    </div>
+    <div class="gallery-item">
+      <img src="khyber.png"/>
+    </div>
+    <div class="gallery-item">
+      <img src="fb2.png"/>
+    </div>
+    <div class="gallery-item">
+      <img src="es album.png"/>
+    </div>
+  </div>
+
+  <section class="ask-section">
+  <h2 class="ask-title">ASK SOME QUESTION</h2>
+
+ <div class="ask-grid">
+  <!-- LEFT COLUMN -->
+  <div class="ask-col">
+    <div class="ask-item active">
+      <button class="ask-header">
+        <span class="num">01.</span>
+        <span class="question">How can I book a test drive?</span>
+        <span class="toggle">−</span>
+      </button>
+      <div class="answer">
+        You can easily book a test drive by filling out our online form or visiting our showroom. 
+        Our team will confirm your preferred date and time.
+      </div>
+    </div>
+
+    <div class="ask-item">
+      <button class="ask-header">
+        <span class="num">02.</span>
+        <span class="question">Do you offer financing or installment plans?</span>
+        <span class="toggle">+</span>
+      </button>
+      <div class="answer">
+        Yes, we offer flexible financing and installment options in partnership with leading banks.
+      </div>
+    </div>
+
+    <div class="ask-item">
+      <button class="ask-header">
+        <span class="num">03.</span>
+        <span class="question">Are your cars brand new or used?</span>
+        <span class="toggle">+</span>
+      </button>
+      <div class="answer">
+        We offer both brand new and certified pre-owned vehicles, all inspected for top performance.
+      </div>
+    </div>
+
+    <div class="ask-item">
+      <button class="ask-header">
+        <span class="num">04.</span>
+        <span class="question">Do you provide car warranty and maintenance services?</span>
+        <span class="toggle">+</span>
+      </button>
+      <div class="answer">
+        Absolutely! Every vehicle comes with a warranty, and we offer complete maintenance and service packages.
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="ask-col">
+    <div class="ask-item">
+      <button class="ask-header">
+        <span class="num">05.</span>
+        <span class="question">Can I trade in my old car?</span>
+        <span class="toggle">+</span>
+      </button>
+      <div class="answer">
+        Yes, you can trade in your existing car and get an instant valuation towards your new purchase.
+      </div>
+    </div>
+
+    <div class="ask-item">
+      <button class="ask-header">
+        <span class="num">06.</span>
+        <span class="question">Do you sell car accessories?</span>
+        <span class="toggle">+</span>
+      </button>
+      <div class="answer">
+        We provide a wide range of genuine accessories — from alloy rims to advanced infotainment systems.
+      </div>
+    </div>
+
+    <div class="ask-item">
+      <button class="ask-header">
+        <span class="num">07.</span>
+        <span class="question">Where is your showroom located?</span>
+        <span class="toggle">+</span>
+      </button>
+      <div class="answer">
+        Our main showroom is located in Rawalpindi. Visit our contact page for directions and timings.
+      </div>
+    </div>
+
+    <div class="ask-item">
+      <button class="ask-header">
+        <span class="num">08.</span>
+        <span class="question">Do you provide car delivery services?</span>
+        <span class="toggle">+</span>
+      </button>
+      <div class="answer">
+        Yes, we offer home delivery for selected models. Delivery time depends on your location and order status.
+      </div>
+    </div>
+
+    <div class="ask-item">
+      <button class="ask-header">
+        <span class="num">09.</span>
+        <span class="question">Can I customize my car before purchase?</span>
+        <span class="toggle">+</span>
+      </button>
+      <div class="answer">
+        Definitely! You can choose color, interiors, and optional features before finalizing your car.
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col about">
+        <h3>AutoDrive</h3>
+        <p>Luxury car dealership offering premium cars and maintenance services worldwide.</p>
+      </div>
+
+      <div class="footer-col contact">
+        <h4>Contact</h4>
+        <p><strong>Address:</strong> Rawalpindi, Pakistan</p>
+        <p><strong>Phone:</strong> +92 311 543771</p>
+        <p><strong>Email:</strong> baderkhalid103@gmail.com</p>
+      </div>
+
+      <div class="footer-col page">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="About_Us.html">About Us</a></li>
+          <li><a href="Shop.html">Services</a></li>
+          <li><a href="Gallery.html">Gallery</a></li>
+          <li><a href="Blog.html">Blog</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter">
+        <h4>Newsletter</h4>
+        <p>Subscribe to get the latest offers and updates.</p>
+        <div class="newsletter-box">
+          <input type="email" placeholder="Your Email.." />
+          <button type="submit">➤</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© baderkhalid 2024 | All Rights Reserved</p>
+      <div class="footer-links">
+        <a href="#">Terms & Condition</a>
+        <a href="#">Privacy Policy</a>
+        <a href="Contact.html">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+</body>
+</html>
+

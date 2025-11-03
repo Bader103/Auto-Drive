@@ -1,0 +1,518 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery_Details - Nafuant</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Arial", sans-serif;
+      background: #f9f6f2;
+      color: #222;
+    }
+
+    /* ===== TOP INFO BAR ===== */
+    .topbar {
+      background: #c59d38;
+      color: #fff;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 100px;
+    }
+
+    .topbar-left span {
+      margin-right: 25px;
+    }
+
+    .topbar-right a {
+      margin-left: 15px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 100px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .navbar .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .navbar nav a {
+      margin: 0 14px;
+      text-decoration: none;
+      color: #333;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .navbar nav a:hover {
+      color: #c59d38;
+    }
+
+    .navbar .btn {
+      padding: 10px 20px;
+      background: #6b4021;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .navbar .btn:hover {
+      background: #4b2c16;
+    }
+
+    /* ===== HERO / TITLE ===== */
+    .about-hero {
+      background: #fff;
+      padding: 70px 100px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 1px solid #eee;
+    }
+
+    .about-hero h2 {
+      font-size: 40px;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .breadcrumb {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .breadcrumb a {
+      text-decoration: none;
+      color: #c59d38;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+     body {
+      font-family: "Georgia", serif;
+      margin: 0;
+      padding: 0;
+      background: #fbf8f4;
+      color: #333;
+    }
+
+    .container {
+      width: 80%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 0;
+    }
+
+    .banner {
+      width: 100%;
+      height: 300px;
+      background: #d6d8da;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 26px;
+      font-weight: bold;
+      margin: 0 0 10px;
+    }
+
+    .meta {
+      display: flex;
+      gap: 30px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .meta span {
+      color: #555;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 20px;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+
+    .tabs span {
+      cursor: pointer;
+      color: #555;
+    }
+
+    .tabs .active {
+      color: #c89b3c;
+      border-bottom: 2px solid #c89b3c;
+      padding-bottom: 5px;
+    }
+
+    .content {
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .image-row {
+      display: flex;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .image-box {
+      flex: 1;
+      height: 150px;
+      background: #d6d8da;
+    }
+
+    .features {
+      margin: 20px 0;
+    }
+
+    .features ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .features li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .features li::before {
+      content: "✔";
+      color: #c89b3c;
+      font-weight: bold;
+    }
+
+    .tags {
+      margin: 30px 0 20px;
+    }
+
+    .tags span {
+      background: #f0f0f0;
+      padding: 6px 12px;
+      margin-right: 8px;
+      border-radius: 4px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .social {
+      display: flex;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .social a {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      font-size: 15px;
+    }
+
+    .pagination a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .pagination a:hover {
+      color: #c89b3c;
+    }
+
+    /* ===== FOOTER ===== */
+.footer {
+  background: #111;
+  color: #ddd;
+  padding: 60px 20px 30px;
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+.footer-col h3, .footer-col h4 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+.footer-col p { font-size: 0.9rem; line-height: 1.6; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a { color: #ddd; transition: color .3s; }
+.footer-col ul li a:hover { color: #b48a46; }
+
+/* Newsletter */
+.newsletter-box {
+  display: flex;
+  margin: 15px 0;
+  border: 1px solid #555;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.newsletter-box input {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  background: #222;
+  color: #fff;
+}
+.newsletter-box button {
+  background: #b48a46;
+  border: none;
+  color: #fff;
+  padding: 0 20px;
+  cursor: pointer;
+}
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #b48a46;
+  font-size: 18px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer-bottom p { font-size: 0.9rem; }
+.footer-links a {
+  margin-left: 15px;
+  color: #ddd;
+  font-size: 0.9rem;
+}
+.footer-links a:hover { color: #b48a46; }
+
+
+     </style>
+</head>
+<body>
+
+  <!-- TOP INFO BAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <span>📧 info@example.com</span>
+      <span>📍 6391 Elgin St. Celina, 10299</span>
+      <span>🕒 Mon-Thu 9am - 8pm</span>
+    </div>
+    <div class="topbar-right">
+      <a href="#">📘</a>
+      <a href="#">📸</a>
+      <a href="#">▶</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+<header class="header">
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="Home_1.html">
+        <img src="logo.png" alt="Nafuant Logo" />
+      </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <ul>
+        <li><a href="Home_1.html">Home 1</a></li>
+        <li><a href="Home_2.html">Home 2</a></li>
+        <li><a href="About_Us.html">About Us</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Blog_Details.html">Blog Details</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="Gallery.html">Gallery</a></li>
+        <li><a href="Gallery_Details.html">Gallery Details</a></li>
+        <li><a href="Shop.html">Shop</a></li>
+        <li><a href="Product_Single.html">Product Single</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Contact Button -->
+    <a href="Contact.html" class="contact-btn">Contact Us →</a>
+
+    <!-- Mobile Toggle -->
+    <div class="menu-toggle" id="menu-btn">☰</div>
+  </div>
+</header>
+  <!-- HERO / TITLE -->
+  <section class="about-hero">
+    <h2>Gallery_Details</h2>
+    <p class="breadcrumb"><a href="#">Home</a> > Gallery_Details</p>
+  </section>
+
+  <div class="container">
+    <div class="banner"></div>
+
+    <h2>Patter Number 02</h2>
+    <div class="meta">
+      <span><b>Category:</b> Restaurant</span>
+      <span><b>Date:</b> October 03, 2024</span>
+      <span><b>Author:</b> Jane Cooper</span>
+      <span><b>Service:</b> Restaurant</span>
+    </div>
+
+    <div class="tabs">
+      <span class="active">Description</span>
+      <span>Information</span>
+      <span>Virtual</span>
+      <span>Reviews</span>
+    </div>
+
+    <div class="content">
+      Restaurants are establishments that prepare and serve Restaurants are establishments that prepare and serve food and customers. They offer a variety of cuisines, from local favorites to international beverages...
+    </div>
+
+    <div class="image-row">
+      <div class="image-box"></div>
+      <div class="image-box"></div>
+      <div class="image-box"></div>
+    </div>
+
+    <div class="content">
+      Restaurants are establishments that prepare and serve food and customers. They offer a variety of cuisines from local favorites to international beverages...
+    </div>
+
+    <div class="features">
+      <ul>
+        <li>Culinary Creations Consultants Restaurant Rendezvous Team</li>
+        <li>Taste the difference Where flavor meets satisfaction Savor</li>
+        <li>Foodie Haven Hospitality Taste Temptations Inc</li>
+        <li>Indulge in excellence Unforgettable dining experience</li>
+      </ul>
+    </div>
+
+    <div class="content">
+      Restaurants are establishments that prepare and serve Restaurants are establishments that prepare and serve food and customers. They offer a variety of cuisines...
+    </div>
+
+    <div class="tags">
+      <span>Cuisine Crafters</span>
+      <span>Dining Oasis</span>
+      <span>Delights</span>
+    </div>
+
+    <div class="social">
+      <a href="#">f</a>
+      <a href="#">📸</a>
+      <a href="#">in</a>
+    </div>
+
+    <div class="pagination">
+      <a href="#">&larr; Previous</a>
+      <a href="#">Next &rarr;</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+  <div class="footer-inner">
+
+    <div class="footer-col about">
+      <h3>Nafuant</h3>
+      <p>
+        A restaurant is a vibrant hub of culinary delights offering
+        an unforgettable dining experience.
+      </p>
+    </div>
+
+    <div class="footer-col contact">
+      <h3>Contact</h3>
+      <h4>Adress</h4>
+      <p>Rawalpindi,Pakistan</p>
+      <h4>Phone no</h4>
+      <p>✉️+92311543771</p>
+      <h4>Email</h4>
+      <p>✉️baderkhalid103@gmail.com</p>
+    </div>
+
+    <div class="footer-col page">
+      <h3>Page</h3>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Testimonial</a></li>
+        <li><a href="#">Blog And News</a></li>
+        <li><a href="#">Team</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col newsletter">
+      <h3>Newsletter</h3>
+      <p>
+        A restaurant is a vibrant hub of culinary delights, offering
+      </p>
+      <div class="newsletter-box">
+        <input type="email" placeholder="Your Email.." />
+        <button>➤</button>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© Yoursitename 2024 | All Rights Reserved</p>
+    <div class="footer-links">
+      <a href="#">Terms & Condition</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Contact Us</a>
+    </div>
+  </div>
+</footer>
+
+  </body>

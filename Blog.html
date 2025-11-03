@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery </title>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+  <style>
+   /* ===== TOP INFO BAR ===== */
+    .topbar {
+      background: maroon;
+      color: #fff;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 100px;
+      position: sticky;     /* make topbar sticky */
+      top: 0;
+      z-index: 1000;
+    }
+
+    .topbar-left span {
+      margin-right: 25px;
+    }
+
+    .topbar-right a {
+      margin-left: 15px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .topbar-right a:hover {
+      color: black;
+    }
+
+    /* ===== HEADER / NAVBAR ===== */
+    .header {
+      background: #000;
+      color: #fff;
+      border-bottom: 2px solid #c00;
+      position: sticky;   /* keeps navbar below topbar */
+      top: 35px;          /* same as topbar height */
+      z-index: 999;
+    }
+
+    .header .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* LOGO */
+    .logo img {
+      height: 50px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* NAVIGATION */
+    .nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: #ff0000;
+    }
+
+    /* CONTACT BUTTON */
+    .contact-btn {
+      background: #710404;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      background: #ebebeb;
+    }
+
+    /* MENU TOGGLE (mobile) */
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* RESPONSIVE NAV */
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+/* ===== HERO / TITLE ===== */
+.about-hero {
+  background: rgb(109, 4, 4);
+  padding: 70px 100px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid #eee;
+}
+
+.about-hero h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: #777;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #800000; /* maroon */
+}
+
+
+
+   
+
+    .sidebar {
+      width: 300px;
+      padding: 20px;
+      background: rgb(112, 100, 100);
+      border: 1px solid #eee;
+      margin: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      border-radius: 6px;
+    }
+
+    /* Profile Section */
+    .profile {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #ccc;
+      display: block;
+      margin: auto;
+      transition: transform 0.3s ease;
+    }
+    .profile img:hover {
+      transform: scale(1.05);
+    }
+    .profile h3 {
+      margin: 10px 0 5px;
+    }
+    .profile p {
+      font-size: 14px;
+      color: white;
+      margin-bottom: 10px;
+    }
+    .social-icons {
+      margin-top: 10px;
+    }
+    .social-icons a {
+      text-decoration: none;
+      margin: 0 5px;
+      color: #555;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: maroon;
+    }
+
+    /* Search */
+    .search-box {
+      display: flex;
+      margin: 20px 0;
+    }
+    .search-box input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+    .search-box button {
+      padding: 8px 12px;
+      border: none;
+      background: maroon;
+      color: #fff;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .search-box button:hover {
+      background:maroon;
+    }
+
+    /* Section titles */
+    .sidebar h4 {
+      margin: 20px 0 10px;
+      font-size: 18px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 5px;
+      color: #3b2f2f;
+    }
+
+    /* Popular Post */
+    .popular-posts div {
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+    .popular-posts small {
+      display: block;
+      color: #999;
+      font-size: 12px;
+      margin-bottom: 3px;
+    }
+    .popular-posts a {
+      text-decoration: none;
+      color: #3b2f2f;
+      transition: color 0.3s;
+    }
+    .popular-posts a:hover {
+      color: maroon;
+    }
+
+    /* Category */
+    .categories ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .categories li {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 14px;
+    }
+    .categories li:hover {
+      color: maroon;
+      cursor: pointer;
+    }
+
+    /* Tags */
+    .tags span {
+      display: inline-block;
+      background: rgb(115, 4, 4);
+      margin: 5px 5px 0 0;
+      padding: 5px 10px;
+      font-size: 13px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+    .tags span:hover {
+      background: maroon;
+      color: #fff;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+    }
+    .gallery div {
+      background: #ccc;
+      height: 60px;
+      border-radius: 4px;
+      transition: transform 0.3s;
+    }
+    .gallery div:hover {
+      transform: scale(1.05);
+    }
+
+    body{
+      background-color: #000;
+    }
+
+    /* ===== FOOTER ===== */
+.footer {
+  background: #111;
+  color: #ddd;
+  padding: 60px 20px 30px;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-col h3,
+.footer-col h4 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer-col p { font-size: 0.9rem; line-height: 1.6; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+
+.footer-col ul li a {
+  color: #ddd;
+  transition: color .3s;
+}
+
+.footer-col ul li a:hover { color: #800000; /* maroon */ }
+
+/* Newsletter */
+.newsletter-box {
+  display: flex;
+  margin: 15px 0;
+  border: 1px solid #555;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.newsletter-box input {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  background: #222;
+  color: #fff;
+}
+
+.newsletter-box button {
+  background: #800000; /* maroon */
+  border: none;
+  color: #fff;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #800000; /* maroon */
+  font-size: 18px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-bottom p { font-size: 0.9rem; }
+
+.footer-links a {
+  margin-left: 15px;
+  color: #ddd;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover { color: #800000; /* maroon */ }
+
+
+    </style>
+</head>
+<body>
+  
+
+  <!-- TOP INFO BAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <span>📧 bader103@gmail.com</span>
+      <span>📍 Rawalpindi,Pakistan</span>
+      <span>🕒 Mon-Fri 9am - 8pm</span>
+    </div>
+    <div class="topbar-right">
+       <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+ <header class="header">
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="Home_1.html">
+        <img src="logo.pngg" alt="" />
+      </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      
+        <a href="Home_1.html">Home</a>
+        <a href="About_Us.html">About Us</a>
+        <a href="Blog.html">Blog</a>
+        <a href="FAQ.html">FAQ</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="Shop.html">Shop</a>
+        <a href="Product_Single.html">Product Single</a>
+        <a href="Contact.html">Contact</a>
+      
+    </nav>
+
+    <!-- Contact Button -->
+    <a href="Contact.html" class="contact-btn">Contact Us →</a>
+  </div>
+</header>
+
+  <!-- HERO / TITLE -->
+  <section class="about-hero">
+    <h2>BLOG</h2>
+    <p class="breadcrumb"><a href="#">Home</a> >BLOG</p>
+  </section>
+
+  <div class="sidebar">
+    <!-- Profile -->
+    <div class="profile">
+      <img src="bader2.jpg" alt="Jane Cooper">
+      <h3>Jane Cooper</h3>
+      <p>Chef Leader</p>
+      <p>Restaurants are establishments that prepare and serve food and beverages to customers. They offer a variety of cuisines</p>
+      <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div class="search-box">
+      <input type="text" placeholder="Search...">
+      <button>🔍</button>
+    </div>
+
+    <!-- Popular Posts -->
+    <h4>Popular Post</h4>
+    <div class="popular-posts">
+      <div>
+        <small>October 19, 2024</small>
+        <a href="#">Taste the difference Where flavor meets satisfaction</a>
+      </div>
+      <div>
+        <small>October 19, 2024</small>
+        <a href="#">Savor the moment Your go-to dining spot</a>
+      </div>
+      <div>
+        <small>October 19, 2024</small>
+        <a href="#">Delight your taste buds A culinary adventure awaits</a>
+      </div>
+    </div>
+
+    <!-- Category -->
+    <h4>Category</h4>
+    <div class="categories">
+      <ul>
+        <li>Flavor Fusion <span>01</span></li>
+        <li>Gourmet Delights <span>02</span></li>
+        <li>Culinary Creations <span>03</span></li>
+        <li>Chef's Palette <span>04</span></li>
+        <li>Dining Oasis <span>05</span></li>
+      </ul>
+    </div>
+
+    <!-- Tags -->
+    <h4>Popular Tags</h4>
+    <div class="tags">
+      <span>Cuisine Crafters</span>
+      <span>Dining Oasis</span>
+      <span>Delights</span>
+      <span>Chef's Palette</span>
+      <span>Plate Perfection</span>
+      <span>Paradise</span>
+    </div>
+
+    <!-- Gallery -->
+    <h4>Gallery</h4>
+    <div class="gallery">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <!-- Profile -->
+    <div class="profile">
+      <img src="#" alt="Jane Cooper">
+      <h3>Jane Cooper</h3>
+      <p>Chef Leader</p>
+      <p>Restaurants are establishments that prepare and serve food and beverages to customers. They offer a variety of cuisines</p>
+      <div class="social-icons">
+        <a href="#">f</a>
+        <a href="#">t</a>
+        <a href="#">in</a>
+        <a href="#">⚲</a>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div class="search-box">
+      <input type="text" placeholder="Search...">
+      <button>🔍</button>
+    </div>
+
+    <!-- Popular Posts -->
+    <h4>Popular Post</h4>
+    <div class="popular-posts">
+      <div>
+        <small>October 19, 2024</small>
+        <a href="#">Taste the difference Where flavor meets satisfaction</a>
+      </div>
+      <div>
+        <small>October 19, 2024</small>
+        <a href="#">Savor the moment Your go-to dining spot</a>
+      </div>
+      <div>
+        <small>October 19, 2024</small>
+        <a href="#">Delight your taste buds A culinary adventure awaits</a>
+      </div>
+    </div>
+
+    <!-- Category -->
+    <h4>Category</h4>
+    <div class="categories">
+      <ul>
+        <li>Flavor Fusion <span>01</span></li>
+        <li>Gourmet Delights <span>02</span></li>
+        <li>Culinary Creations <span>03</span></li>
+        <li>Chef's Palette <span>04</span></li>
+        <li>Dining Oasis <span>05</span></li>
+      </ul>
+    </div>
+
+    <!-- Tags -->
+    <h4>Popular Tags</h4>
+    <div class="tags">
+      <span>Cuisine Crafters</span>
+      <span>Dining Oasis</span>
+      <span>Delights</span>
+      <span>Chef's Palette</span>
+      <span>Plate Perfection</span>
+      <span>Paradise</span>
+    </div>
+
+    <!-- Gallery -->
+    <h4>Gallery</h4>
+    <div class="gallery">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <!-- Profile -->
+    <div class="profile">
+      <img src="#" alt="Jane Cooper">
+      <h3>Jane Cooper</h3>
+      <p>Chef Leader</p>
+      <p>Restaurants are establishments that prepare and serve food and beverages to customers. They offer a variety of cuisines</p>
+      <div class="social-icons">
+        <a href="#">f</a>
+        <a href="#">t</a>
+        <a href="#">in</a>
+        <a href="#">⚲</a>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div class="search-box">
+      <input type="text" placeholder="Search...">
+      <button>🔍</button>
+    </div>
+
+    <!-- Popular Posts -->
+    <h4>Popular Post</h4>
+    <div class="popular-posts">
+      <div>
+        <small>October 19, 2024</small>
+        <a href="#">Taste the difference Where flavor meets satisfaction</a>
+      </div>
+      <div>
+        <small>October 19, 2024</small>
+        <a href="#">Savor the moment Your go-to dining spot</a>
+      </div>
+      <div>
+        <small>October 19, 2024</small>
+        <a href="#">Delight your taste buds A culinary adventure awaits</a>
+      </div>
+    </div>
+
+    <!-- Category -->
+    <h4>Category</h4>
+    <div class="categories">
+      <ul>
+        <li>Flavor Fusion <span>01</span></li>
+        <li>Gourmet Delights <span>02</span></li>
+        <li>Culinary Creations <span>03</span></li>
+        <li>Chef's Palette <span>04</span></li>
+        <li>Dining Oasis <span>05</span></li>
+      </ul>
+    </div>
+
+    <!-- Tags -->
+    <h4>Popular Tags</h4>
+    <div class="tags">
+      <span>Cuisine Crafters</span>
+      <span>Dining Oasis</span>
+      <span>Delights</span>
+      <span>Chef's Palette</span>
+      <span>Plate Perfection</span>
+      <span>Paradise</span>
+    </div>
+
+    <!-- Gallery -->
+    <h4>Gallery</h4>
+    <div class="gallery">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+    <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col about">
+        <h3>AutoDrive</h3>
+        <p>Luxury car dealership offering premium cars and maintenance services worldwide.</p>
+      </div>
+
+      <div class="footer-col contact">
+        <h4>Contact</h4>
+        <p><strong>Address:</strong> Rawalpindi, Pakistan</p>
+        <p><strong>Phone:</strong> +92 311 543771</p>
+        <p><strong>Email:</strong> baderkhalid103@gmail.com</p>
+      </div>
+
+      <div class="footer-col page">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter">
+        <h4>Newsletter</h4>
+        <p>Subscribe to get the latest offers and updates.</p>
+        <div class="newsletter-box">
+          <input type="email" placeholder="Your Email.." />
+          <button type="submit">➤</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© AutoDrive 2024 | All Rights Reserved</p>
+      <div class="footer-links">
+        <a href="#">Terms & Condition</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+</html>

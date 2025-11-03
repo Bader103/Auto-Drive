@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product_Single - Nafuant</title>
+   <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Arial", sans-serif;
+      background: black;
+      color: white;
+    }
+
+    /* ===== TOP INFO BAR ===== */
+    .topbar {
+      background: maroon;
+      color: #fff;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 100px;
+      position: sticky;     /* make topbar sticky */
+      top: 0;
+      z-index: 1000;
+    }
+
+    .topbar-left span {
+      margin-right: 25px;
+    }
+
+    .topbar-right a {
+      margin-left: 15px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .topbar-right a:hover {
+      color: black;
+    }
+
+    /* ===== HEADER / NAVBAR ===== */
+    .header {
+      background: #000;
+      color: #fff;
+      border-bottom: 2px solid #c00;
+      position: sticky;   /* keeps navbar below topbar */
+      top: 35px;          /* same as topbar height */
+      z-index: 999;
+    }
+
+    .header .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* LOGO */
+    .logo img {
+      height: 50px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* NAVIGATION */
+    .nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: #ff0000;
+    }
+
+    /* CONTACT BUTTON */
+    .contact-btn {
+      background: #710404;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      background: #ebebeb;
+    }
+
+    /* MENU TOGGLE (mobile) */
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* RESPONSIVE NAV */
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+/* ===== HERO / TITLE ===== */
+.about-hero {
+  background:rgb(101, 0, 0);
+  padding: 70px 100px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid #eee;
+}
+
+.about-hero h2 {
+  font-size: 40px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color:white;
+}
+.breadcrumb :hover{
+  color: #888;
+}
+.breadcrumb a {
+  text-decoration: none;
+  color: #800000; /* changed from #c59d38 */
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: black;
+  color: white;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.product {
+  display: flex;
+  gap: 40px;
+}
+
+.product-image .main-img {
+  width: 100%;
+  max-width: 400px;   /* card ke andar image ka max width */
+  height: 300px;      /* height fix kar di gayi */
+  background: #d6d7d7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  overflow: hidden;   /* extra image portion hide ho jayega */
+  margin: 0 auto;     /* center me card align karne ke liye */
+}
+
+.product-image .main-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* image card ke size ke hisaab se fit rahegi */
+  border-radius: 6px;
+}
+
+
+.product-image .thumbs {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.product-image .thumbs div {
+  width: 60px;
+  height: 60px;
+  background: #d6d7d7;
+  border: 2px solid #ccc;
+}
+
+.product-details {
+  flex: 2;
+}
+
+.product-details h2 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.price {
+  font-size: 24px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.stars {
+  color: gold;
+  font-size: 18px;
+}
+
+.reviews {
+  font-size: 14px;
+  margin-left: 10px;
+  color: #666;
+}
+
+.description {
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+.checks {
+  margin: 15px 0;
+}
+
+.checks p {
+  margin: 5px 0;
+}
+
+.meta {
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+.meta span {
+  font-weight: bold;
+}
+
+.quantity-cart {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.quantity span {
+  font-size: 14px;
+  color: #333;
+}
+
+.btn {
+  background: #800000; /* maroon */
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.btn :hover{
+  color: rgb(176, 160, 160);
+}
+
+.wishlist-compare {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.tabs {
+  margin-top: 40px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  gap: 20px;
+}
+
+.tabs div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tabs .active {
+  color: #800000; /* maroon */
+  font-weight: bold;
+  border-bottom: 2px solid #800000; /* maroon */
+}
+
+.tab-content {
+  margin-top: 20px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.related {
+  margin-top: 40px;
+}
+
+.related h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.related-items {
+  display: flex;
+  gap: 20px;
+}
+
+.related-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 6px;
+  background: #fff;
+  flex: 1;
+}
+
+.related-card .img {
+  width: 100%;
+  height: 150px;
+  background: #d6d7d7;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  overflow: hidden; /* image ko box ke andar lock karne ke liye */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.related-card .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* image distort nahi hogi, box ke andar fit rahegi */
+  border-radius: 6px;
+}
+
+
+.related-card h4 {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.related-card p {
+  font-size: 13px;
+  color: #666;
+  margin: 10px 0;
+}
+
+.price-old {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 5px;
+}
+
+.sale-tag {
+  background: #800000; /* maroon */
+  color: white;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-left: 5px;
+}
+
+.btnCart :hover{
+  color: #000;
+  transition: 0ms;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #111;
+  color: #ddd;
+  padding: 60px 20px 30px;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-col h3,
+.footer-col h4 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer-col p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #ddd;
+  transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #800000; /* maroon */
+}
+
+/* Newsletter */
+.newsletter-box {
+  display: flex;
+  margin: 15px 0;
+  border: 1px solid #555;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.newsletter-box input {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  background: #222;
+  color: #fff;
+}
+
+.newsletter-box button {
+  background: #800000; /* maroon */
+  border: none;
+  color: #fff;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #800000; /* maroon */
+  font-size: 18px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  margin-left: 15px;
+  color: #ddd;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: #800000; /* maroon */
+}
+
+/* ===== RESPONSIVE (About Section) ===== */
+@media (max-width: 992px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .half-circle {
+    width: 250px;
+    height: 250px;
+    margin: 30px auto 0;
+  }
+
+  .about-card {
+    text-align: left;
+  }
+}
+
+
+
+    </style>
+</head>
+<body>
+
+  <!-- TOP INFO BAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+       <span>📧 bader103@gmail.com</span>
+      <span>📍 Rawalpindi,Pakistan</span>
+      <span>🕒 Mon-Fri 9am - 8pm</span>
+    </div>
+    <div class="topbar-right">
+     <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="header">
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="Home_1.html">
+        <img src="logo.pngg" alt="" />
+      </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="Home_1.html">Home </a>
+      <a href="About_Us.html">About Us</a>
+      <a href="Blog.html">Blog</a>
+      <a href="FAQ.html">FAQ</a>
+      <a href="Gallery.html">Gallery</a>
+      <a href="Shop.html">Shop</a>
+      <a href="Product_Single.html">Product Single</a>
+    </nav>
+
+    <!-- Contact Button -->
+    <a href="Contact.html" class="contact-btn">Contact Us →</a>
+
+    
+  </div>
+</header>
+
+  <!-- HERO / TITLE -->
+  <section class="about-hero">
+    <h2>Product_Single</h2>
+    <p class="breadcrumb"><a href="Home_1.html">Home</a> >Product_Single</p>
+  </section>
+
+<div class="container">
+  <div class="product">
+    <div class="product-image">
+      <div class="main-img"><img src="engine.png" alt="Engine" /></div>
+      
+    </div>
+
+    <div class="product-details">
+      <h2>Car Engine</h2>
+      <div class="price">$399.00</div>
+      <div>
+        <span class="stars">★ ★ ★ ★ ☆</span>
+        <span class="reviews">12 Reviews</span>
+      </div>
+      <div class="description">
+        A powerful and reliable car engine designed for maximum performance and fuel efficiency. 
+        Perfect for a variety of car models, this engine ensures smooth acceleration and long-lasting durability.
+      </div>
+      <div class="checks">
+        <p>✔ High-performance and fuel-efficient</p>
+        <p>✔ Compatible with multiple car brands</p>
+      </div>
+      <div class="meta">
+        <p><span>Sku:</span> ENG-5521-XT</p>
+        <p><span>Category:</span> Engine Parts</p>
+        <p><span>Tags:</span> Engine, Performance, AutoParts</p>
+      </div>
+      <div class="quantity-cart">
+        <div class="quantity">
+          <span>01</span>
+        </div>
+        <button class="btn Cart">Add To Cart →</button>
+      </div>
+      <div class="wishlist-compare">
+        ♡ Add To Wishlist | ⚖ Compare
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="active">Description</div>
+    <div>Information</div>
+    <div>Specifications</div>
+    <div>Reviews</div>
+  </div>
+  <div class="tab-content">
+    This engine is built using high-quality materials to ensure long-term performance, 
+    easy installation, and low maintenance. Suitable for both automatic and manual transmission vehicles. 
+    Backed by a 1-year warranty for manufacturing defects.
+  </div>
+
+  <!-- Related Work -->
+  <div class="related">
+    <h3>Related Car Parts</h3>
+    <div class="related-items">
+      <div class="related-card">
+        <div class="img"><img src="brake.png" alt="Brake Pads"></div>
+        <h4>Brake Pads <span>$89.00</span></h4>
+        <p>High-durability brake pads ensuring safety and smooth braking performance.</p>
+        <button class="btn">Add To Cart</button>
+      </div>
+
+      <div class="related-card">
+        <div class="img"><img src="battery.png" alt="Car Battery"></div>
+        <h4>Car Battery <span class="price-old">$120.00</span> $99.00 <span class="sale-tag">Sale</span></h4>
+        <p>Maintenance-free battery with long lifespan and reliable cold start power.</p>
+        <button class="btn">Add To Cart</button>
+      </div>
+
+      <div class="related-card">
+        <div class="img"><img src="tre.jpg" alt="Tyres"></div>
+        <h4>All-Season Tyres <span>$150.00</span></h4>
+        <p>Premium tyres designed for superior grip and comfort in all weather conditions.</p>
+        <button class="btn">Add To Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  // Select tabs and content container
+  const tabs = document.querySelectorAll(".tabs div");
+  const tabContent = document.querySelector(".tab-content");
+
+  // Tab content data
+  const contents = {
+    Description: `This engine is built using high-quality materials to ensure long-term performance,
+    easy installation, and low maintenance. Suitable for both automatic and manual transmission vehicles.
+    Backed by a 1-year warranty for manufacturing defects.`,
+
+    Information: `Brand: AutoPro Motors<br>
+    Model: ENG-5521-XT<br>
+    Warranty: 1 Year<br>
+    Material: Aluminum Alloy<br>
+    Compatibility: Sedan, SUV, Sports Cars`,
+
+    Specifications: `<ul>
+      <li>Horsepower: 320 HP</li>
+      <li>Fuel Type: Petrol</li>
+      <li>Torque: 400 Nm</li>
+      <li>Weight: 220 KG</li>
+      <li>Cooling System: Liquid Cooled</li>
+    </ul>`,
+
+    Reviews: `<strong>John D.</strong> ⭐⭐⭐⭐☆<br>
+    “The engine performance is excellent. Smooth acceleration and easy fit!”<br><br>
+    <strong>Maria K.</strong> ⭐⭐⭐⭐⭐<br>
+    “Amazing quality and worth the price. Highly recommend!”`
+  };
+
+  // Add click events
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      // Remove active class
+      tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      // Update content
+      const selected = tab.textContent.trim();
+      tabContent.innerHTML = contents[selected];
+    });
+  });
+</script>
+
+
+<footer class="footer">
+  <div class="footer-inner">
+
+    <div class="footer-col about">
+      <h3>Nafuant</h3>
+      <p>
+        “ A car showroom is a vibrant hub of automotive excellence, offering a <br>
+        diverse range of vehicles that ignite passion with a fusion of <br>
+        performance, style, and innovation. From compact city cars to <br>
+        luxurious sedans and powerful SUVs, each drive is a thrilling experience.”
+      </p>
+    </div>
+
+    <div class="footer-col contact">
+      <h3>Contact</h3>
+      <h4>Adress</h4>
+      <p>Rawalpindi,Pakistan</p>
+      <h4>Phone no</h4>
+      <p>✉️+92311543771</p>
+      <h4>Email</h4>
+      <p>✉️baderkhalid103@gmail.com</p>
+    </div>
+
+    <div class="footer-col page">
+      <h3>Page</h3>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Testimonial</a></li>
+        <li><a href="#">Blog And News</a></li>
+        <li><a href="#">Team</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col newsletter">
+      <h3>Newsletter</h3>
+      <p>
+         A car showroom is a vibrant hub of automotive excellence, offering an unforgettable experience for car enthusia
+      </p>
+      <div class="newsletter-box">
+        <input type="email" placeholder="Your Email.." />
+        <button>➤</button>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© Yoursitename 2024 | All Rights Reserved</p>
+    <div class="footer-links">
+      <a href="#">Terms & Condition</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Contact Us</a>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
