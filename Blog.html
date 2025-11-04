@@ -393,6 +393,185 @@
 
 .footer-links a:hover { color: #800000; /* maroon */ }
 
+/* =============================
+   📱 RESPONSIVE MEDIA QUERIES
+   ============================= */
+
+/* ---------- LARGE TABLETS / SMALL LAPTOPS ---------- */
+@media (max-width: 1024px) {
+
+  /* Reduce side paddings */
+  .topbar {
+    padding: 8px 40px;
+    font-size: 13px;
+  }
+
+  .header .container {
+    padding: 10px 40px;
+  }
+
+  .about-hero {
+    padding: 60px 40px 30px;
+  }
+
+  .footer-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .sidebar {
+    width: 260px;
+    margin: 15px;
+  }
+}
+
+
+/* ---------- TABLETS (LANDSCAPE & PORTRAIT) ---------- */
+@media (max-width: 900px) {
+
+  /* Topbar + Navbar */
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 30px;
+  }
+
+  .header .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Hero Section */
+  .about-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px 30px;
+  }
+
+  .about-hero h2 {
+    font-size: 32px;
+  }
+
+  /* Sidebar adjustments */
+  .sidebar {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  /* Footer */
+  .footer-inner {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+  }
+}
+
+
+/* ---------- MOBILE (GENERAL) ---------- */
+@media (max-width: 768px) {
+
+  /* Hide main nav, show mobile toggle */
+  .nav {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Topbar */
+  .topbar {
+    padding: 8px 20px;
+    font-size: 12px;
+  }
+
+  .topbar-left span {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  /* Hero Section */
+  .about-hero {
+    padding: 40px 20px;
+  }
+
+  .about-hero h2 {
+    font-size: 26px;
+  }
+
+  .breadcrumb {
+    font-size: 13px;
+  }
+
+  /* Sidebar (stacked layout) */
+  .sidebar {
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+  }
+
+  /* Footer Layout */
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+
+/* ---------- SMALL MOBILE DEVICES ---------- */
+@media (max-width: 480px) {
+
+  .topbar {
+    padding: 8px 10px;
+  }
+
+  .header .container {
+    padding: 8px 15px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .about-hero h2 {
+    font-size: 22px;
+  }
+
+  .sidebar h4 {
+    font-size: 16px;
+  }
+
+  .sidebar p,
+  .categories li,
+  .tags span,
+  .popular-posts a {
+    font-size: 13px;
+  }
+
+  .gallery div {
+    height: 50px;
+  }
+
+  .footer {
+    padding: 40px 10px 20px;
+  }
+
+  .footer-bottom {
+    padding-top: 15px;
+  }
+}
+
+
 
     </style>
 </head>
@@ -419,7 +598,7 @@
   <div class="container">
     <!-- Logo -->
     <div class="logo">
-      <a href="Home_1.html">
+      <a href="index.html">
         <img src="logo.pngg" alt="" />
       </a>
     </div>
@@ -427,7 +606,7 @@
     <!-- Navigation -->
     <nav class="nav">
       
-        <a href="Home_1.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="About_Us.html">About Us</a>
         <a href="Blog.html">Blog</a>
         <a href="FAQ.html">FAQ</a>
@@ -448,282 +627,83 @@
     <h2>BLOG</h2>
     <p class="breadcrumb"><a href="#">Home</a> >BLOG</p>
   </section>
-
-  <div class="sidebar">
-    <!-- Profile -->
-    <div class="profile">
-      <img src="bader2.jpg" alt="Jane Cooper">
-      <h3>Jane Cooper</h3>
-      <p>Chef Leader</p>
-      <p>Restaurants are establishments that prepare and serve food and beverages to customers. They offer a variety of cuisines</p>
-      <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
+  <div class="sidebar-container">
+<div class="sidebar">
+  <!-- Profile -->
+  <div class="profile">
+    <img src="bader2.jpg" alt="Alex Johnson">
+    <h3>Alex Johnson</h3>
+    <p>Automotive Specialist</p>
+    <p>Welcome to AutoDrive! We bring you the latest trends, reviews, and insights from the world of cars — from luxury rides to electric innovation.</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
       <a href="#"><i class="fab fa-instagram"></i></a>
       <a href="#"><i class="fab fa-twitter"></i></a>
       <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        
-      </div>
-    </div>
-
-    <!-- Search -->
-    <div class="search-box">
-      <input type="text" placeholder="Search...">
-      <button>🔍</button>
-    </div>
-
-    <!-- Popular Posts -->
-    <h4>Popular Post</h4>
-    <div class="popular-posts">
-      <div>
-        <small>October 19, 2024</small>
-        <a href="#">Taste the difference Where flavor meets satisfaction</a>
-      </div>
-      <div>
-        <small>October 19, 2024</small>
-        <a href="#">Savor the moment Your go-to dining spot</a>
-      </div>
-      <div>
-        <small>October 19, 2024</small>
-        <a href="#">Delight your taste buds A culinary adventure awaits</a>
-      </div>
-    </div>
-
-    <!-- Category -->
-    <h4>Category</h4>
-    <div class="categories">
-      <ul>
-        <li>Flavor Fusion <span>01</span></li>
-        <li>Gourmet Delights <span>02</span></li>
-        <li>Culinary Creations <span>03</span></li>
-        <li>Chef's Palette <span>04</span></li>
-        <li>Dining Oasis <span>05</span></li>
-      </ul>
-    </div>
-
-    <!-- Tags -->
-    <h4>Popular Tags</h4>
-    <div class="tags">
-      <span>Cuisine Crafters</span>
-      <span>Dining Oasis</span>
-      <span>Delights</span>
-      <span>Chef's Palette</span>
-      <span>Plate Perfection</span>
-      <span>Paradise</span>
-    </div>
-
-    <!-- Gallery -->
-    <h4>Gallery</h4>
-    <div class="gallery">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
     </div>
   </div>
 
-  <div class="sidebar">
-    <!-- Profile -->
-    <div class="profile">
-      <img src="#" alt="Jane Cooper">
-      <h3>Jane Cooper</h3>
-      <p>Chef Leader</p>
-      <p>Restaurants are establishments that prepare and serve food and beverages to customers. They offer a variety of cuisines</p>
-      <div class="social-icons">
-        <a href="#">f</a>
-        <a href="#">t</a>
-        <a href="#">in</a>
-        <a href="#">⚲</a>
-      </div>
-    </div>
+  <!-- Search -->
+  <div class="search-box">
+    <input type="text" placeholder="Search cars, reviews...">
+    <button>🔍</button>
+  </div>
 
-    <!-- Search -->
-    <div class="search-box">
-      <input type="text" placeholder="Search...">
-      <button>🔍</button>
+  <!-- Popular Posts -->
+  <h4>Popular Articles</h4>
+  <div class="popular-posts">
+    <div>
+      <small>October 19, 2024</small>
+      <a href="#">Top 10 Electric Cars That Redefine Performance</a>
     </div>
-
-    <!-- Popular Posts -->
-    <h4>Popular Post</h4>
-    <div class="popular-posts">
-      <div>
-        <small>October 19, 2024</small>
-        <a href="#">Taste the difference Where flavor meets satisfaction</a>
-      </div>
-      <div>
-        <small>October 19, 2024</small>
-        <a href="#">Savor the moment Your go-to dining spot</a>
-      </div>
-      <div>
-        <small>October 19, 2024</small>
-        <a href="#">Delight your taste buds A culinary adventure awaits</a>
-      </div>
+    <div>
+      <small>October 19, 2024</small>
+      <a href="#">Luxury Meets Speed: The 2025 Supercar Lineup</a>
     </div>
-
-    <!-- Category -->
-    <h4>Category</h4>
-    <div class="categories">
-      <ul>
-        <li>Flavor Fusion <span>01</span></li>
-        <li>Gourmet Delights <span>02</span></li>
-        <li>Culinary Creations <span>03</span></li>
-        <li>Chef's Palette <span>04</span></li>
-        <li>Dining Oasis <span>05</span></li>
-      </ul>
-    </div>
-
-    <!-- Tags -->
-    <h4>Popular Tags</h4>
-    <div class="tags">
-      <span>Cuisine Crafters</span>
-      <span>Dining Oasis</span>
-      <span>Delights</span>
-      <span>Chef's Palette</span>
-      <span>Plate Perfection</span>
-      <span>Paradise</span>
-    </div>
-
-    <!-- Gallery -->
-    <h4>Gallery</h4>
-    <div class="gallery">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div>
+      <small>October 19, 2024</small>
+      <a href="#">SUV Showdown: Comfort, Power, and Style Combined</a>
     </div>
   </div>
 
-  <div class="sidebar">
-    <!-- Profile -->
-    <div class="profile">
-      <img src="#" alt="Jane Cooper">
-      <h3>Jane Cooper</h3>
-      <p>Chef Leader</p>
-      <p>Restaurants are establishments that prepare and serve food and beverages to customers. They offer a variety of cuisines</p>
-      <div class="social-icons">
-        <a href="#">f</a>
-        <a href="#">t</a>
-        <a href="#">in</a>
-        <a href="#">⚲</a>
-      </div>
-    </div>
-
-    <!-- Search -->
-    <div class="search-box">
-      <input type="text" placeholder="Search...">
-      <button>🔍</button>
-    </div>
-
-    <!-- Popular Posts -->
-    <h4>Popular Post</h4>
-    <div class="popular-posts">
-      <div>
-        <small>October 19, 2024</small>
-        <a href="#">Taste the difference Where flavor meets satisfaction</a>
-      </div>
-      <div>
-        <small>October 19, 2024</small>
-        <a href="#">Savor the moment Your go-to dining spot</a>
-      </div>
-      <div>
-        <small>October 19, 2024</small>
-        <a href="#">Delight your taste buds A culinary adventure awaits</a>
-      </div>
-    </div>
-
-    <!-- Category -->
-    <h4>Category</h4>
-    <div class="categories">
-      <ul>
-        <li>Flavor Fusion <span>01</span></li>
-        <li>Gourmet Delights <span>02</span></li>
-        <li>Culinary Creations <span>03</span></li>
-        <li>Chef's Palette <span>04</span></li>
-        <li>Dining Oasis <span>05</span></li>
-      </ul>
-    </div>
-
-    <!-- Tags -->
-    <h4>Popular Tags</h4>
-    <div class="tags">
-      <span>Cuisine Crafters</span>
-      <span>Dining Oasis</span>
-      <span>Delights</span>
-      <span>Chef's Palette</span>
-      <span>Plate Perfection</span>
-      <span>Paradise</span>
-    </div>
-
-    <!-- Gallery -->
-    <h4>Gallery</h4>
-    <div class="gallery">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+  <!-- Category -->
+  <h4>Categories</h4>
+  <div class="categories">
+    <ul>
+      <li>Electric Vehicles <span>08</span></li>
+      <li>Luxury Cars <span>12</span></li>
+      <li>Sports & Supercars <span>09</span></li>
+      <li>Car Reviews <span>15</span></li>
+      <li>Auto News <span>07</span></li>
+    </ul>
   </div>
 
-    <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-col about">
-        <h3>AutoDrive</h3>
-        <p>Luxury car dealership offering premium cars and maintenance services worldwide.</p>
-      </div>
+  <!-- Tags -->
+  <h4>Popular Tags</h4>
+  <div class="tags">
+    <span>EV</span>
+    <span>Luxury</span>
+    <span>Performance</span>
+    <span>Speed</span>
+    <span>Innovation</span>
+    <span>AutoTech</span>
+  </div>
 
-      <div class="footer-col contact">
-        <h4>Contact</h4>
-        <p><strong>Address:</strong> Rawalpindi, Pakistan</p>
-        <p><strong>Phone:</strong> +92 311 543771</p>
-        <p><strong>Email:</strong> baderkhalid103@gmail.com</p>
-      </div>
-
-      <div class="footer-col page">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col newsletter">
-        <h4>Newsletter</h4>
-        <p>Subscribe to get the latest offers and updates.</p>
-        <div class="newsletter-box">
-          <input type="email" placeholder="Your Email.." />
-          <button type="submit">➤</button>
-        </div>
-      </div>
+  <!-- Gallery -->
+  <h4>Gallery</h4>
+    <div class="gallery">
+    <div style="background-image: url('gallery1.jpg');"></div>
+    <div style="background-image: url('gallery2.jpg');"></div>
+    <div style="background-image: url('gallery3.jpg');"></div>
+    <div style="background-image: url('gallery4.jpg');"></div>
+    <div style="background-image: url('gallery5.jpg');"></div>
+    <div style="background-image: url('gallery6.jpg');"></div>
+    <div style="background-image: url('gallery7.jpg');"></div>
+    <div style="background-image: url('gallery8.jpg');"></div>
+    <div style="background-image: url('gallery9.jpg');"></div>
     </div>
-
-    <div class="footer-bottom">
-      <p>© AutoDrive 2024 | All Rights Reserved</p>
-      <div class="footer-links">
-        <a href="#">Terms & Condition</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Contact Us</a>
-      </div>
-    </div>
-  </footer>
-
+  </div>
+</div>
 
 </body>
 </html>

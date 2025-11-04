@@ -387,20 +387,216 @@ body {
 .footer-links a:hover { color: #800000; }
 
 /* Responsive (About Section) */
-@media (max-width: 992px) {
-  .about-container {
+/* ==============================
+   📱 RESPONSIVE DESIGN — AUTODRIVE CONTACT PAGE
+   ============================== */
+
+/* Tablet screens (≤ 991px) */
+@media (max-width: 991px) {
+  /* --- Topbar --- */
+  .topbar {
+    padding: 8px 40px;
+    font-size: 13px;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  /* --- Header --- */
+  .header .container {
+    padding: 10px 40px;
+  }
+
+  .nav {
+    gap: 15px;
+  }
+
+  /* --- Hero --- */
+  .about-hero {
+    padding: 60px 40px 30px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .about-hero h2 {
+    font-size: 32px;
+  }
+
+  .breadcrumb {
+    margin-top: 10px;
+  }
+
+  /* --- Contact/Booking Section --- */
+  .contact-book {
+    grid-template-columns: 1fr;
+    padding: 60px 40px;
+    gap: 30px;
+  }
+
+  .contact {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .contact-info {
+    justify-content: center;
+  }
+
+  .booking {
+    margin-top: 20px;
+  }
+
+  /* --- Footer --- */
+  .footer-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+/* Mobile screens (≤ 768px) */
+@media (max-width: 768px) {
+  /* --- Navbar --- */
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #111;
+    border: 1px solid #800000;
+    border-radius: 10px;
+    width: 200px;
+    padding: 15px;
+    z-index: 1000;
+  }
+
+  .nav a {
+    padding: 10px 0;
+    border-bottom: 1px solid #222;
+  }
+
+  .nav a:last-child {
+    border-bottom: none;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  /* --- Hero --- */
+  .about-hero {
+    padding: 40px 20px;
+  }
+
+  .about-hero h2 {
+    font-size: 28px;
+  }
+
+  /* --- Contact/Booking --- */
+  .contact-book {
+    padding: 40px 20px;
+  }
+
+  .booking {
+    padding: 30px 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  /* --- Map Section --- */
+  .map-section {
+    height: 300px;
+  }
+
+  /* --- Footer --- */
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Small Mobile screens (≤ 480px) */
+@media (max-width: 480px) {
+  /* --- Topbar --- */
+  .topbar {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+
+  /* --- Header --- */
+  .header .container {
+    padding: 10px 15px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  /* --- Hero --- */
+  .about-hero {
+    padding: 30px 15px;
+  }
+
+  .about-hero h2 {
+    font-size: 24px;
+  }
+
+  /* --- Contact/Booking --- */
+  .contact-book {
+    padding: 30px 15px;
+  }
+
+  .contact h2 {
+    font-size: 1.6rem;
+  }
+
+  .booking h2 {
+    font-size: 1.4rem;
+  }
+
+  .booking {
+    padding: 25px 15px;
+  }
+
+  .btn-book {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* --- Footer --- */
+  .footer-inner {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  .half-circle {
-    width: 250px;
-    height: 250px;
-    margin: 30px auto 0;
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
   }
-  .about-card {
-    text-align: left;
+
+  .footer-links a {
+    display: block;
+    margin: 4px 0;
   }
 }
+
 
     </style>
 </head>
@@ -426,14 +622,14 @@ body {
   <div class="container">
     <!-- Logo -->
     <div class="logo">
-      <a href="Home_1.html">
+      <a href="index.html">
         <img src="logo.pngg" alt="" />
       </a>
     </div>
 
     <!-- Navigation -->
     <nav class="nav">
-      <a href="Home_1.html">Home</a>
+      <a href="index.html">Home</a>
       <a href="About_Us.html">About Us</a>
       <a href="Blog.html">Blog</a>
       <a href="FAQ.html">FAQ</a>

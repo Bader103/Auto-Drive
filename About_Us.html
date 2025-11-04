@@ -617,6 +617,218 @@
       .testimonial-section { grid-template-columns: 1fr; padding: 60px 40px; text-align: center; }
       .testimonial-image { margin-top: 40px; }
     }
+
+
+    /* ============================= */
+/*   ✅ UNIVERSAL RESPONSIVE FIX */
+/* ============================= */
+
+/* ===== TABLETS (max-width: 992px) ===== */
+@media (max-width: 992px) {
+
+  /* Topbar */
+  .topbar {
+    flex-direction: column;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  .topbar-left span {
+    display: block;
+    margin: 4px 0;
+  }
+
+  /* Header / Navbar */
+  .header .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* About Section */
+  .about-grid {
+    grid-template-columns: 1fr;
+    padding: 60px 40px;
+  }
+  .about-image {
+    height: 220px;
+  }
+
+  /* Offer Banner */
+  .offer-banner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 60px 40px;
+  }
+  .offer-circle {
+    margin: 30px auto 0;
+  }
+
+  /* Pricing Section */
+  .pricing {
+    padding: 60px 40px;
+  }
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Testimonial */
+  .testimonial-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 60px 30px;
+  }
+  .testimonial-image {
+    margin: 40px auto 0;
+  }
+
+  /* Book Table */
+  .book-table {
+    flex-direction: column;
+    max-width: 90%;
+  }
+  .book-left {
+    min-height: 300px;
+  }
+
+  /* Download Section */
+  .download-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 60px 40px;
+  }
+  .app-buttons {
+    justify-content: center;
+  }
+
+  /* Footer */
+  .footer-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
+
+/* ===== MOBILE (max-width: 600px) ===== */
+@media (max-width: 600px) {
+
+  /* Global Layout */
+  body {
+    font-size: 14px;
+  }
+
+  /* Topbar */
+  .topbar {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  /* Header */
+  .header .container {
+    padding: 10px 15px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .nav {
+    display: none; /* hidden on mobile */
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* About Hero */
+  .about-hero {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .about-hero h2 {
+    font-size: 28px;
+  }
+
+  /* About Grid */
+  .about-grid {
+    padding: 40px 20px;
+    gap: 25px;
+  }
+
+  /* Offer Banner */
+  .offer-banner {
+    padding: 40px 20px;
+  }
+  .offer-text h2 {
+    font-size: 24px;
+  }
+  .offer-circle {
+    width: 140px;
+    height: 140px;
+    font-size: 20px;
+  }
+
+  /* Pricing */
+  .pricing {
+    padding: 40px 20px;
+  }
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Testimonials */
+  .testimonial-section {
+    padding: 40px 20px;
+  }
+  .testimonial-content h2 {
+    font-size: 24px;
+  }
+
+  /* Book Table */
+  .book-right {
+    padding: 30px 20px;
+  }
+
+  /* Download Section */
+  .download-section {
+    padding: 40px 20px;
+  }
+  .download-text h2 {
+    font-size: 24px;
+  }
+
+  /* Footer */
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .footer-col {
+    margin-bottom: 20px;
+  }
+  .newsletter-box {
+    flex-direction: column;
+  }
+  .newsletter-box input,
+  .newsletter-box button {
+    border-radius: 6px;
+    width: 100%;
+  }
+  .newsletter-box button {
+    margin-top: 8px;
+  }
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-links a {
+    margin: 6px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -642,14 +854,14 @@
   <div class="container">
     <!-- Logo -->
     <div class="logo">
-      <a href="Home_1.html">
+      <a href="index.html">
         <img src="logo.pngg" alt="Logo" />
       </a>
     </div>
 
     <!-- Navigation -->
     <nav class="nav">
-      <a href="Home_1.html">Home </a>
+      <a href="index.html">Home </a>
       <a href="About_Us.html">About Us</a>
       <a href="Blog.html">Blog</a>
       <a href="FAQ.html">FAQ</a>
@@ -672,7 +884,7 @@
   <!-- HERO / TITLE -->
 <section class="about-hero">
   <h2>About Us</h2>
-  <p class="breadcrumb"><a href="Home_1.html">Home</a> > About Us</p>
+  <p class="breadcrumb"><a href="index.html">Home</a> > About Us</p>
 </section>
 
 <!-- ABOUT US CONTENT -->
@@ -818,7 +1030,7 @@
 
         <div class="form-group full">
           <select>
-            <option>Total Guest</option>
+            <option>Car</option>
           </select>
         </div>
 
@@ -826,7 +1038,7 @@
           <textarea placeholder="Message here.."></textarea>
         </div>
 
-        <button type="submit" class="btn-submit">Book A Table →</button>
+        <button type="submit" class="btn-submit">Book An Appointment →</button>
       </form>
     </div>
   </section>
@@ -834,10 +1046,9 @@
   <section class="download-section">
   <div class="download-text">
     <h5>Download The App</h5>
-    <h2>Download The Food App Now</h2>
+    <h2>Download The  App Now</h2>
     <p>
-      A restaurant is a vibrant hub of culinary delights, offering a diverse
-      menu that tantalizes taste buds with a fusion of flavors
+     AutoDrive is a dynamic hub of automotive innovation, offering a diverse range of vehicles that excite drivers with power, performance, and precision engineering.
     </p>
     <div class="app-buttons">
       <a href="#" class="app-btn">

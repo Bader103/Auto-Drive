@@ -1,27 +1,35 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery_Details - Nafuant</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery Details | AutoDrive</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+  />
+
   <style>
     body {
       margin: 0;
-      font-family: "Arial", sans-serif;
-      background: #f9f6f2;
-      color: #222;
+      font-family: "Poppins", sans-serif;
+      background: #000;
+      color: #fff;
     }
 
     /* ===== TOP INFO BAR ===== */
     .topbar {
-      background: #c59d38;
+      background: maroon;
       color: #fff;
       font-size: 14px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 8px 100px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .topbar-left span {
@@ -30,93 +38,114 @@
 
     .topbar-right a {
       margin-left: 15px;
-      color: #fff;
+      color: white;
       text-decoration: none;
       font-size: 14px;
     }
 
-    /* ===== NAVBAR ===== */
-    .navbar {
-      background: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 100px;
-      border-bottom: 1px solid #eee;
+    .topbar-right a:hover {
+      color: black;
     }
 
-    .navbar .logo {
-      font-size: 22px;
-      font-weight: bold;
-      color: #222;
+    /* ===== HEADER ===== */
+    .header {
+      background: #000;
+      color: #fff;
+      border-bottom: 2px solid #c00;
+      position: sticky;
+      top: 35px;
+      z-index: 999;
     }
 
-    .navbar nav a {
-      margin: 0 14px;
-      text-decoration: none;
-      color: #333;
-      font-size: 15px;
-      transition: 0.3s;
-    }
-
-    .navbar nav a:hover {
-      color: #c59d38;
-    }
-
-    .navbar .btn {
+    .header .container {
+      max-width: 1200px;
+      margin: auto;
       padding: 10px 20px;
-      background: #6b4021;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo img {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav a {
       color: #fff;
       text-decoration: none;
-      border-radius: 30px;
-      font-size: 14px;
-      transition: 0.3s;
+      font-weight: 500;
+      transition: color 0.3s ease;
     }
 
-    .navbar .btn:hover {
-      background: #4b2c16;
+    .nav a:hover {
+      color: red;
     }
 
-    /* ===== HERO / TITLE ===== */
+    .contact-btn {
+      background: #710404;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      background: #ebebeb;
+      color: black;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* ===== HERO SECTION ===== */
     .about-hero {
-      background: #fff;
+      background: rgb(101, 0, 0);
       padding: 70px 100px 40px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid #222;
     }
 
     .about-hero h2 {
       font-size: 40px;
       text-transform: uppercase;
       margin: 0;
+      color: #fff;
     }
 
     .breadcrumb {
       font-size: 14px;
-      color: #777;
+      color: white;
     }
-
     .breadcrumb a {
+      color: #ff4c4c;
       text-decoration: none;
-      color: #c59d38;
     }
 
-    @media (max-width: 900px) {
-      .gallery {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-     body {
-      font-family: "Georgia", serif;
-      margin: 0;
-      padding: 0;
-      background: #fbf8f4;
-      color: #333;
-    }
-
+    /* ===== MAIN CONTENT ===== */
     .container {
       width: 80%;
       max-width: 1000px;
@@ -127,7 +156,8 @@
     .banner {
       width: 100%;
       height: 300px;
-      background: #d6d8da;
+      background: url('car1.jpg') center/cover no-repeat;
+      border-radius: 10px;
       margin-bottom: 30px;
     }
 
@@ -135,6 +165,7 @@
       font-size: 26px;
       font-weight: bold;
       margin: 0 0 10px;
+      color: #ff3333;
     }
 
     .meta {
@@ -142,10 +173,7 @@
       gap: 30px;
       font-size: 14px;
       margin-bottom: 20px;
-    }
-
-    .meta span {
-      color: #555;
+      color: #aaa;
     }
 
     .tabs {
@@ -157,19 +185,19 @@
 
     .tabs span {
       cursor: pointer;
-      color: #555;
+      color: #666;
     }
 
     .tabs .active {
-      color: #c89b3c;
-      border-bottom: 2px solid #c89b3c;
+      color: #ff3333;
+      border-bottom: 2px solid #ff3333;
       padding-bottom: 5px;
     }
 
     .content {
       font-size: 15px;
       line-height: 1.7;
-      margin-bottom: 20px;
+      color: #ccc;
     }
 
     .image-row {
@@ -181,11 +209,8 @@
     .image-box {
       flex: 1;
       height: 150px;
-      background: #d6d8da;
-    }
-
-    .features {
-      margin: 20px 0;
+      background: #222;
+      border-radius: 10px;
     }
 
     .features ul {
@@ -201,22 +226,18 @@
     }
 
     .features li::before {
-      content: "✔";
-      color: #c89b3c;
-      font-weight: bold;
-    }
-
-    .tags {
-      margin: 30px 0 20px;
+      content: "🚗";
+      color: #ff3333;
     }
 
     .tags span {
-      background: #f0f0f0;
+      background: #222;
       padding: 6px 12px;
       margin-right: 8px;
       border-radius: 4px;
       font-size: 13px;
-      cursor: pointer;
+      color: #ff3333;
+      border: 1px solid #ff3333;
     }
 
     .social {
@@ -229,13 +250,12 @@
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      background: #eee;
+      background: #222;
+      color: #ff3333;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      color: #333;
-      font-size: 14px;
     }
 
     .pagination {
@@ -247,205 +267,201 @@
     }
 
     .pagination a {
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      color: #ff3333;
       text-decoration: none;
-      color: #333;
       font-weight: bold;
     }
 
-    .pagination a:hover {
-      color: #c89b3c;
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #111;
+      color: #ddd;
+      padding: 60px 20px 30px;
     }
 
-    /* ===== FOOTER ===== */
-.footer {
-  background: #111;
-  color: #ddd;
-  padding: 60px 20px 30px;
-}
-.footer-inner {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  max-width: 1200px;
-  margin: auto;
-}
-.footer-col h3, .footer-col h4 {
-  color: #fff;
-  margin-bottom: 15px;
-}
-.footer-col p { font-size: 0.9rem; line-height: 1.6; }
-.footer-col ul { list-style: none; }
-.footer-col ul li { margin-bottom: 10px; }
-.footer-col ul li a { color: #ddd; transition: color .3s; }
-.footer-col ul li a:hover { color: #b48a46; }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-/* Newsletter */
-.newsletter-box {
-  display: flex;
-  margin: 15px 0;
-  border: 1px solid #555;
-  border-radius: 30px;
-  overflow: hidden;
-}
-.newsletter-box input {
-  flex: 1;
-  padding: 10px 15px;
-  border: none;
-  outline: none;
-  background: #222;
-  color: #fff;
-}
-.newsletter-box button {
-  background: #b48a46;
-  border: none;
-  color: #fff;
-  padding: 0 20px;
-  cursor: pointer;
-}
-.social-icons a {
-  display: inline-block;
-  margin-right: 10px;
-  color: #b48a46;
-  font-size: 18px;
-}
+    .footer-col h3,
+    .footer-col h4 {
+      color: #ff3333;
+      margin-bottom: 15px;
+    }
 
-/* Footer Bottom */
-.footer-bottom {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid #333;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.footer-bottom p { font-size: 0.9rem; }
-.footer-links a {
-  margin-left: 15px;
-  color: #ddd;
-  font-size: 0.9rem;
-}
-.footer-links a:hover { color: #b48a46; }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
 
+    .footer-col ul li a {
+      color: #ccc;
+      text-decoration: none;
+    }
 
-     </style>
+    .footer-col ul li a:hover {
+      color: #ff3333;
+    }
+
+    .newsletter-box {
+      display: flex;
+      margin: 15px 0;
+      border: 1px solid #555;
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    .newsletter-box input {
+      flex: 1;
+      padding: 10px 15px;
+      border: none;
+      outline: none;
+      background: #222;
+      color: #fff;
+    }
+
+    .newsletter-box button {
+      background: #ff3333;
+      border: none;
+      color: #fff;
+      padding: 0 20px;
+      cursor: pointer;
+    }
+
+    .footer-bottom {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 0.9rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 991px) {
+      .footer-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .image-row {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .about-hero {
+        padding: 40px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+      .topbar {
+        padding: 8px 20px;
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+  </style>
 </head>
 <body>
-
   <!-- TOP INFO BAR -->
   <div class="topbar">
     <div class="topbar-left">
-      <span>📧 info@example.com</span>
-      <span>📍 6391 Elgin St. Celina, 10299</span>
-      <span>🕒 Mon-Thu 9am - 8pm</span>
+      <span>📧 AutoDrive@gmail.com</span>
+      <span>📍 Rawalpindi, Pakistan</span>
+      <span>🕒 Mon–Fri 9am–8pm</span>
     </div>
     <div class="topbar-right">
-      <a href="#">📘</a>
-      <a href="#">📸</a>
-      <a href="#">▶</a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
     </div>
   </div>
 
   <!-- NAVBAR -->
-<header class="header">
-  <div class="container">
-    <!-- Logo -->
-    <div class="logo">
-      <a href="Home_1.html">
-        <img src="logo.png" alt="Nafuant Logo" />
-      </a>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html"><img src="logo.pngg" alt="AutoDrive Logo" /></a>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="About_Us.html">About</a>
+        <a href="Shop.html">Shop</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="Blog.html">Blog</a>
+        <a href="FAQ.html">FAQ</a>
+      </nav>
+      <a href="Contact.html" class="contact-btn">Contact →</a>
+      <div class="menu-toggle" id="menu-btn">☰</div>
     </div>
+  </header>
 
-    <!-- Navigation -->
-    <nav class="nav">
-      <ul>
-        <li><a href="Home_1.html">Home 1</a></li>
-        <li><a href="Home_2.html">Home 2</a></li>
-        <li><a href="About_Us.html">About Us</a></li>
-        <li><a href="Blog.html">Blog</a></li>
-        <li><a href="Blog_Details.html">Blog Details</a></li>
-        <li><a href="FAQ.html">FAQ</a></li>
-        <li><a href="Gallery.html">Gallery</a></li>
-        <li><a href="Gallery_Details.html">Gallery Details</a></li>
-        <li><a href="Shop.html">Shop</a></li>
-        <li><a href="Product_Single.html">Product Single</a></li>
-        <li><a href="Contact.html">Contact</a></li>
-      </ul>
-    </nav>
-
-    <!-- Contact Button -->
-    <a href="Contact.html" class="contact-btn">Contact Us →</a>
-
-    <!-- Mobile Toggle -->
-    <div class="menu-toggle" id="menu-btn">☰</div>
-  </div>
-</header>
-  <!-- HERO / TITLE -->
+  <!-- HERO -->
   <section class="about-hero">
-    <h2>Gallery_Details</h2>
-    <p class="breadcrumb"><a href="#">Home</a> > Gallery_Details</p>
+    <h2>Gallery Details</h2>
+    <p class="breadcrumb"><a href="#">Home</a> > Gallery Details</p>
   </section>
 
+  <!-- MAIN CONTENT -->
   <div class="container">
     <div class="banner"></div>
 
-    <h2>Patter Number 02</h2>
+    <h2>BMW M3 Performance Edition</h2>
     <div class="meta">
-      <span><b>Category:</b> Restaurant</span>
-      <span><b>Date:</b> October 03, 2024</span>
-      <span><b>Author:</b> Jane Cooper</span>
-      <span><b>Service:</b> Restaurant</span>
+      <span><b>Category:</b> Sports Cars</span>
+      <span><b>Date:</b> Oct 03, 2024</span>
+      <span><b>Author:</b> AutoDrive Team</span>
+      <span><b>Service:</b> Auto Customization</span>
     </div>
 
     <div class="tabs">
       <span class="active">Description</span>
-      <span>Information</span>
-      <span>Virtual</span>
+      <span>Specifications</span>
+      <span>Gallery</span>
       <span>Reviews</span>
     </div>
 
     <div class="content">
-      Restaurants are establishments that prepare and serve Restaurants are establishments that prepare and serve food and customers. They offer a variety of cuisines, from local favorites to international beverages...
+      Experience the sheer power of the BMW M3 — where innovation meets adrenaline. 
+      The new M3 blends cutting-edge technology with aggressive styling and ultimate performance.
     </div>
 
     <div class="image-row">
-      <div class="image-box"></div>
-      <div class="image-box"></div>
-      <div class="image-box"></div>
-    </div>
-
-    <div class="content">
-      Restaurants are establishments that prepare and serve food and customers. They offer a variety of cuisines from local favorites to international beverages...
+      <div class="image-box" style="background:url('bmw.jpg') center/cover;"></div>
+      <div class="image-box" style="background:url('engine.png') center/cover;"></div>
+      <div class="image-box" style="background:url('rim.png') center/cover;"></div>
     </div>
 
     <div class="features">
       <ul>
-        <li>Culinary Creations Consultants Restaurant Rendezvous Team</li>
-        <li>Taste the difference Where flavor meets satisfaction Savor</li>
-        <li>Foodie Haven Hospitality Taste Temptations Inc</li>
-        <li>Indulge in excellence Unforgettable dining experience</li>
+        <li>3.0L Twin-Turbo Inline-6 Engine</li>
+        <li>Adaptive M Suspension for all terrains</li>
+        <li>Carbon Fiber Roof and Aerodynamics</li>
+        <li>0–100 km/h in just 4.1 seconds</li>
       </ul>
     </div>
 
-    <div class="content">
-      Restaurants are establishments that prepare and serve Restaurants are establishments that prepare and serve food and customers. They offer a variety of cuisines...
-    </div>
-
     <div class="tags">
-      <span>Cuisine Crafters</span>
-      <span>Dining Oasis</span>
-      <span>Delights</span>
+      <span>BMW</span>
+      <span>Performance</span>
+      <span>Luxury Cars</span>
     </div>
 
     <div class="social">
-      <a href="#">f</a>
-      <a href="#">📸</a>
-      <a href="#">in</a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
     </div>
 
     <div class="pagination">
@@ -454,65 +470,49 @@
     </div>
   </div>
 
+  <!-- FOOTER -->
   <footer class="footer">
-  <div class="footer-inner">
-
-    <div class="footer-col about">
-      <h3>Nafuant</h3>
-      <p>
-        A restaurant is a vibrant hub of culinary delights offering
-        an unforgettable dining experience.
-      </p>
-    </div>
-
-    <div class="footer-col contact">
-      <h3>Contact</h3>
-      <h4>Adress</h4>
-      <p>Rawalpindi,Pakistan</p>
-      <h4>Phone no</h4>
-      <p>✉️+92311543771</p>
-      <h4>Email</h4>
-      <p>✉️baderkhalid103@gmail.com</p>
-    </div>
-
-    <div class="footer-col page">
-      <h3>Page</h3>
-      <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Service</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Testimonial</a></li>
-        <li><a href="#">Blog And News</a></li>
-        <li><a href="#">Team</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col newsletter">
-      <h3>Newsletter</h3>
-      <p>
-        A restaurant is a vibrant hub of culinary delights, offering
-      </p>
-      <div class="newsletter-box">
-        <input type="email" placeholder="Your Email.." />
-        <button>➤</button>
+    <div class="footer-inner">
+      <div class="footer-col about">
+        <h3>AutoDrive</h3>
+        <p>Your trusted destination for premium cars, performance upgrades, and expert auto detailing.</p>
       </div>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-x-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+
+      <div class="footer-col contact">
+        <h3>Contact</h3>
+        <p>📍 Rawalpindi, Pakistan</p>
+        <p>📞 +92 311 543771</p>
+        <p>📧 autodrive@gmail.com</p>
+      </div>
+
+      <div class="footer-col page">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="Shop.html">Shop</a></li>
+          <li><a href="Gallery.html">Gallery</a></li>
+          <li><a href="Blog.html">Blog</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter">
+        <h3>Newsletter</h3>
+        <p>Subscribe for the latest updates and car news!</p>
+        <div class="newsletter-box">
+          <input type="email" placeholder="Your Email.." />
+          <button>➤</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="footer-bottom">
-    <p>© Yoursitename 2024 | All Rights Reserved</p>
-    <div class="footer-links">
-      <a href="#">Terms & Condition</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Contact Us</a>
+    <div class="footer-bottom">
+      <p>© AutoDrive 2024 | All Rights Reserved</p>
+      <div class="footer-links">
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Contact</a>
+      </div>
     </div>
-  </div>
-</footer>
-
-  </body>
+  </footer>
+</body>
+</html>

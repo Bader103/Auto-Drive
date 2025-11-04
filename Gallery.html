@@ -335,6 +335,149 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* ===========================
+   📱 RESPONSIVE MEDIA QUERIES
+   =========================== */
+
+/* Large Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .topbar {
+    padding: 8px 40px;
+    font-size: 13px;
+  }
+
+  .header .container {
+    padding: 10px 40px;
+  }
+
+  .about-hero {
+    padding: 60px 40px 30px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-hero h2 {
+    font-size: 32px;
+  }
+
+  .ask-grid {
+    gap: 25px;
+  }
+}
+
+/* Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  .topbar-left span {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .topbar-right {
+    margin-top: 5px;
+  }
+
+  .header .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .nav {
+    display: none; /* hidden by default */
+  }
+
+  .menu-toggle {
+    display: block; /* shows burger menu */
+  }
+
+  .about-hero {
+    padding: 50px 20px;
+    text-align: center;
+  }
+
+  .about-hero h2 {
+    font-size: 28px;
+  }
+
+  .breadcrumb {
+    font-size: 13px;
+  }
+
+  .gallery {
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .ask-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+/* Small Mobiles (max-width: 480px) */
+@media (max-width: 480px) {
+  .topbar {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .header .container {
+    padding: 8px 15px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .about-hero {
+    padding: 40px 15px;
+  }
+
+  .about-hero h2 {
+    font-size: 24px;
+  }
+
+  .gallery {
+    width: 95%;
+    grid-template-columns: 1fr;
+  }
+
+  .ask-title {
+    font-size: 26px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links a {
+    display: block;
+    margin: 5px 0;
+  }
+}
+
  </style>
 </head>
 <body>
@@ -359,14 +502,14 @@
   <div class="container">
     <!-- Logo -->
     <div class="logo">
-      <a href="Home_1.html">
+      <a href="index.html">
         <img src="logo.pngg" alt="Nafuant Logo" />
       </a>
     </div>
 
     <!-- Navigation -->
     <nav class="nav">
-      <a href="Home_1.html">Home</a>
+      <a href="index.html">Home</a>
       <a href="About_Us.html">About Us</a>
       <a href="Blog.html">Blog</a>
       <a href="FAQ.html">FAQ</a>
